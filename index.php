@@ -396,6 +396,9 @@ $moments = [
     </header>
   </div>
   <div class="slider" id="gallerySlider" role="region" aria-roledescription="carousel" aria-label="Photo gallery">
+    <div class="slider__stage">
+    <button type="button" class="slider__arrow slider__arrow--prev" id="galPrev" aria-label="Previous photos"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button type="button" class="slider__arrow slider__arrow--next" id="galNext" aria-label="Next photos"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
     <div class="gallery__viewport" id="galleryViewport">
       <div class="gallery__rail" id="rail" aria-live="off">
         <button type="button" class="g-item" data-full="portrait-1" data-alt="Full-length studio portrait of Maylyn Cabillanes"><?= img('portrait-1', 'Full-length studio portrait of Maylyn Cabillanes') ?></button>
@@ -405,16 +408,15 @@ $moments = [
         <button type="button" class="g-item" data-full="portrait-4" data-alt="Studio portrait of Maylyn Cabillanes"><?= img('portrait-4', 'Studio portrait of Maylyn Cabillanes') ?></button>
       </div>
     </div>
-    <div class="container">
-      <div class="slider__controls">
-        <button type="button" class="slider__btn" id="galPrev" aria-label="Previous photos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <div class="slider__dots" id="galDots" role="tablist" aria-label="Choose slide"></div>
-        <button type="button" class="slider__btn" id="galNext" aria-label="Next photos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-        <button type="button" class="slider__btn slider__play" id="galPlay" aria-label="Pause autoplay" aria-pressed="true">
-          <svg class="i-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
-          <svg class="i-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
-        </button>
-      </div>
+    </div>
+    <div class="slider__bar">
+      <span class="slider__count" aria-hidden="true"><b id="galCur">01</b><i></i><span id="galTotal">06</span></span>
+      <div class="slider__dots" id="galDots" role="tablist" aria-label="Choose slide"></div>
+      <button type="button" class="slider__play" id="galPlay" aria-label="Pause autoplay" aria-pressed="true">
+        <svg class="i-pause" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+        <svg class="i-play" viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+        <span class="slider__play-label">Pause</span>
+      </button>
     </div>
   </div>
 </section>
