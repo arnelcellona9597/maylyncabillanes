@@ -66,7 +66,9 @@ $clean = fn(string $s): string => trim(preg_replace('/[\r\n]+/', ' ', $s));
 $name = $clean($name);
 $subject = $clean($subject) ?: 'New inquiry';
 
+// Prefer a .env kept above the web root; fall back to the project root (local dev).
 Env::load(__DIR__ . '/../.env');
+Env::load(__DIR__ . '/../../.env');
 $to = array_filter(array_map('trim', explode(',', Env::get('MAIL_TO'))));
 
 $body = "New message from maylyncabillanes.com\n\n"
