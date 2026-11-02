@@ -410,15 +410,15 @@ $moments = [
     <header class="section__head">
       <p class="eyebrow reveal">Together</p>
       <h2 class="h2 reveal">Maylyn &amp; Arnel.</h2>
-      <p class="reveal together__lead">A studio photoshoot celebrating partnership, support and the people who make the work worthwhile.</p>
+      <p class="reveal together__lead">A studio photoshoot of girlfriend and boyfriend: two people who laugh, grow and dream together, and who make every day worth coming home to.</p>
     </header>
     <div class="together__grid">
       <?php foreach ([1, 2, 3, 4] as $n): ?>
-      <button type="button" class="c-item reveal-img" data-full="couple-<?= $n ?>" data-alt="Maylyn and Arnel, studio couple portrait <?= $n ?>" style="--d:<?= ($n - 1) * .12 ?>s"><?= img('couple-' . $n, 'Maylyn and Arnel, studio couple portrait ' . $n) ?><span class="c-item__zoom" aria-hidden="true">+</span></button>
+      <button type="button" class="c-item reveal-img" data-full="couple-<?= $n ?>" data-alt="Maylyn and her boyfriend Arnel, studio couple portrait <?= $n ?>" style="--d:<?= ($n - 1) * .12 ?>s"><?= img('couple-' . $n, 'Maylyn and her boyfriend Arnel, studio couple portrait ' . $n) ?><span class="c-item__zoom" aria-hidden="true">+</span></button>
       <?php endforeach; ?>
     </div>
     <div class="together__link reveal">
-      <span>Visit Arnel’s website</span>
+      <span>Her boyfriend’s website</span>
       <a class="partner" href="https://www.arnelcellona.com" target="_blank" rel="noopener" title="Arnel Cellona — arnelcellona.com">
         <b>Arnel Cellona</b><i>www.arnelcellona.com</i>
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
