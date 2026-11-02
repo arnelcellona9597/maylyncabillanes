@@ -332,10 +332,30 @@ $moments = [
 </main>
 
 <footer class="footer">
-  <div class="container footer__inner">
-    <span class="footer__brand">Maylyn Cabillanes</span>
-    <span>© <?= $year ?> All rights reserved.</span>
-    <a href="#top" class="link" data-magnetic>Back to top ↑</a>
+  <div class="footer__mark" aria-hidden="true">Maylyn Cabillanes</div>
+  <div class="container">
+    <div class="footer__top">
+      <div class="footer__about">
+        <a href="#top" class="footer__brand" data-magnetic>Maylyn<span> Cabillanes</span></a>
+        <p>Human Resource Management Staff at the Philippine Postal Corporation, Davao City. Where people, process and technology meet.</p>
+        <a class="icon-btn" href="https://www.facebook.com/maylyn.cabillanes" target="_blank" rel="noopener" aria-label="Maylyn Cabillanes on Facebook"><svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.7c0-.9.3-1.5 1.5-1.5h1.6V4.5c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.2H7.9v3h2.6V21h3z"/></svg></a>
+      </div>
+      <nav class="footer__col" aria-label="Footer">
+        <h4>Explore</h4>
+        <a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#skills">Expertise</a><a href="#gallery">Gallery</a><a href="#together">Together</a>
+      </nav>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <a href="mailto:info@maylyncabillanes.com">info@maylyncabillanes.com</a>
+        <a href="mailto:maylyncabillanes3@gmail.com">maylyncabillanes3@gmail.com</a>
+        <span>Davao City, Philippines</span>
+        <a href="#contact" class="footer__cta">Send a message <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <?= $year ?> Maylyn Cabillanes. All rights reserved.</span>
+      <a href="#top" class="totop" aria-label="Back to top" data-magnetic><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+    </div>
   </div>
 </footer>
 
