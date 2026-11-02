@@ -72,7 +72,10 @@ $schema = [
             ],
             'alumniOf' => [
                 '@type' => 'CollegeOrUniversity',
-                'name' => 'Agusan del Sur State College of Agriculture and Technology',
+                'name' => 'Agusan del Sur State University',
+                'alternateName' => 'Agusan del Sur State College of Agriculture and Technology',
+                'url' => 'https://adssu.edu.ph',
+                'sameAs' => ['https://www.facebook.com/ADSSUarise'],
             ],
             'hasCredential' => [
                 ['@type' => 'EducationalOccupationalCredential', 'name' => 'Bachelor of Science in Information Technology', 'credentialCategory' => 'degree'],
@@ -354,7 +357,20 @@ $moments = [
       <p class="eyebrow reveal">Education</p>
       <h2 class="h2 reveal">Foundations of <em>excellence.</em></h2>
       <ul class="edu__list">
-        <li class="reveal"><b class="yr">2024</b><div><span>Aug 2019 — Jun 2024</span><h3>Bachelor of Science in Information Technology</h3><p>Agusan del Sur State College of Agriculture and Technology · Dean’s Lister</p><ul class="tags" aria-label="Skills"><li>Communication skills</li><li>Technical proficiency</li></ul></div></li>
+        <li class="reveal"><b class="yr">2024</b><div><span>Aug 2019 — Jun 2024</span><h3>Bachelor of Science in Information Technology</h3><p>Agusan del Sur State College of Agriculture and Technology, now Agusan del Sur State University · Dean’s Lister</p><ul class="tags" aria-label="Skills"><li>Communication skills</li><li>Technical proficiency</li></ul>
+          <div class="school-links" aria-label="Agusan del Sur State University links">
+            <a class="school-link" href="https://adssu.edu.ph" target="_blank" rel="noopener" aria-label="Agusan del Sur State University website, adssu.edu.ph (opens in a new tab)">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9S14.600 18.400 12 21c-2.600-2.600-3.900-5.600-3.900-9S9.400 5.600 12 3z"/></svg>
+              <span><b>University website</b><i>adssu.edu.ph</i></span>
+              <svg class="school-link__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+            <a class="school-link" href="https://www.facebook.com/ADSSUarise" target="_blank" rel="noopener" aria-label="Agusan del Sur State University on Facebook (opens in a new tab)">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.7c0-.9.3-1.5 1.5-1.5h1.6V4.5c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.2H7.9v3h2.6V21h3z"/></svg>
+              <span><b>Official Facebook page</b><i>@ADSSUarise</i></span>
+              <svg class="school-link__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+          </div>
+        </div></li>
         <li class="reveal"><b class="yr">2022</b><div><span>Sep 2022</span><h3>Vocational · Food Technology and Processing</h3><p>TESDA — Technical Education and Skills Development Authority</p></div></li>
         <li class="reveal"><b class="yr">2019</b><div><span>2018 — 2019</span><h3>Senior High School · TVL-ICT, Computer System Servicing</h3><p>Informatic Computer Institute of Agusan del Sur · With Honors</p><p class="edu__note">Completed 486 hours as an administrative assistant managing paper works and data encoding, honing organizational skills and attention to detail.</p><ul class="tags" aria-label="Skills"><li>OSHA 10-Hour</li><li>Laptops</li></ul></div></li>
         <li class="reveal"><b class="yr">2013</b><div><span>2008 — 2013</span><h3>Elementary</h3><p>Consuelo Elementary School · With Honors</p></div></li>
