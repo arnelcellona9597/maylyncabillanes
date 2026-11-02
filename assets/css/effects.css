@@ -34,15 +34,15 @@ body:not(.is-ready){overflow:hidden}
 /* Reveals */
 .reveal{opacity:0;transform:translateY(40px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease);transition-delay:var(--d,0s)}
 .reveal.in{opacity:1;transform:none}
-.reveal-img{clip-path:inset(0 0 100% 0);transition:clip-path 1.5s var(--ease)}
-.reveal-img.in{clip-path:inset(0 0 0 0)}
+.reveal-img{opacity:0;transform:translateY(50px) scale(.97);transition:opacity 1.2s var(--ease),transform 1.4s var(--ease);transition-delay:var(--d,0s)}
+.reveal-img.in{opacity:1;transform:none}
 .split .ch{display:inline-block;transform:translateY(110%) rotate(6deg);transition:transform 1.1s var(--ease);transition-delay:calc(var(--i)*55ms + .5s)}
 body.is-ready .split .ch{transform:none}
 .split{display:inline-block}
 
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
-  .reveal,.reveal-img{opacity:1;transform:none;clip-path:none}
+  .reveal,.reveal-img{opacity:1;transform:none}
   .split .ch{transform:none}
   .overlay--grain,.overlay--sweep{display:none}
 }
