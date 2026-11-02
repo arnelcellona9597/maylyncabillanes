@@ -406,12 +406,22 @@ $moments = [
 
 <!-- TOGETHER -->
 <section class="section together" id="together">
-  <div class="container">
+  <canvas class="hearts" id="heartsCanvas" aria-hidden="true"></canvas>
+  <div class="container together__inner">
     <header class="section__head">
       <p class="eyebrow reveal">Together</p>
-      <h2 class="h2 reveal">Maylyn &amp; Arnel.</h2>
+      <h2 class="h2 reveal">Maylyn <span class="amp" aria-label="and">&amp;</span> Arnel.</h2>
       <p class="reveal together__lead">A studio photoshoot of girlfriend and boyfriend: two people who laugh, grow and dream together, and who make every day worth coming home to.</p>
     </header>
+    <div class="vow reveal" aria-hidden="true">
+      <span class="vow__line"></span>
+      <svg class="vow__rings" viewBox="0 0 120 56" width="120" height="56" fill="none" stroke="currentColor" stroke-width="1.4">
+        <circle class="ring ring--a" cx="44" cy="30" r="20"/>
+        <circle class="ring ring--b" cx="76" cy="30" r="20"/>
+        <path class="vow__heart" d="M60 14.5c-2.6-4.6-9.2-3.4-9.2 1.8 0 3.7 4.4 6.6 9.2 10.8 4.8-4.2 9.2-7.1 9.2-10.8 0-5.2-6.6-6.4-9.2-1.8z" fill="currentColor" stroke="none"/>
+      </svg>
+      <span class="vow__line"></span>
+    </div>
     <div class="together__grid">
       <?php foreach ([1, 2, 3, 4] as $n): ?>
       <button type="button" class="c-item reveal-img" data-full="couple-<?= $n ?>" data-alt="Maylyn and her boyfriend Arnel, studio couple portrait <?= $n ?>" style="--d:<?= ($n - 1) * .12 ?>s"><?= img('couple-' . $n, 'Maylyn and her boyfriend Arnel, studio couple portrait ' . $n) ?><span class="c-item__zoom" aria-hidden="true">+</span></button>
@@ -512,6 +522,7 @@ $moments = [
 <script src="assets/js/theme.js"></script>
 <script src="assets/js/scroll.js"></script>
 <script src="assets/js/effects.js"></script>
+<script src="assets/js/hearts.js"></script>
 <script src="assets/js/contact.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
