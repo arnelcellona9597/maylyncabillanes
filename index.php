@@ -239,7 +239,7 @@ $moments = [
   </div>
 </header>
 
-<main id="main">
+<main id="main" tabindex="-1">
 <!-- HERO -->
 <section class="hero" id="top">
   <canvas class="hero__canvas" id="heroCanvas" aria-hidden="true"></canvas>
@@ -362,7 +362,7 @@ $moments = [
             <div>
               <span class="chip">Certificate · Sep 2022</span>
               <h4>Food Processing</h4>
-              <p class="award__org">Issued by <a class="link" href="https://www.tesda.gov.ph/" target="_blank" rel="noopener">TESDA<span aria-hidden="true"> ↗</span></a> · Associated with TESDA</p>
+              <p class="award__org">Issued by <a class="link" href="https://www.tesda.gov.ph/" target="_blank" rel="noopener">TESDA<span class="sr-only"> website, opens in a new tab</span><span aria-hidden="true"> ↗</span></a> · Associated with TESDA</p>
               <p>I completed a certificate in Food Processing focused on Tocino and Longganisa production. The program gave me hands-on experience in meat preservation, seasoning and food safety standards, and I’m passionate about preserving culinary traditions.</p>
             </div>
           </article>
@@ -394,36 +394,36 @@ $moments = [
       <ul class="edu__list">
         <li class="reveal"><b class="yr">2024</b><div><span>Aug 2019 — Jun 2024</span><h3>Bachelor of Science in Information Technology</h3><p>Agusan del Sur State College of Agriculture and Technology, now Agusan del Sur State University · Dean’s Lister</p><ul class="tags" aria-label="Skills"><li>Communication skills</li><li>Technical proficiency</li></ul>
           <div class="school-links" aria-label="Agusan del Sur State University links">
-            <a class="school-link" href="https://adssu.edu.ph" target="_blank" rel="noopener" aria-label="Agusan del Sur State University website, adssu.edu.ph (opens in a new tab)">
+            <a class="school-link" href="https://adssu.edu.ph" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9S14.600 18.400 12 21c-2.600-2.600-3.900-5.600-3.900-9S9.400 5.600 12 3z"/></svg>
-              <span><b>University website</b><i>adssu.edu.ph</i></span>
+              <span><b>University website</b><i>adssu.edu.ph</i><span class="sr-only">, Agusan del Sur State University, opens in a new tab</span></span>
               <svg class="school-link__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
             </a>
-            <a class="school-link" href="https://www.facebook.com/ADSSUarise" target="_blank" rel="noopener" aria-label="Agusan del Sur State University on Facebook (opens in a new tab)">
+            <a class="school-link" href="https://www.facebook.com/ADSSUarise" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.7c0-.9.3-1.5 1.5-1.5h1.6V4.5c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.2H7.9v3h2.6V21h3z"/></svg>
-              <span><b>Official Facebook page</b><i>@ADSSUarise</i></span>
+              <span><b>Official Facebook page</b><i>@ADSSUarise</i><span class="sr-only">, Agusan del Sur State University, opens in a new tab</span></span>
               <svg class="school-link__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
             </a>
           </div>
         </div></li>
         <li class="reveal"><b class="yr">2022</b><div><span>Sep 2022</span><h3>Vocational · Food Technology and Processing</h3><p>TESDA — Technical Education and Skills Development Authority</p><div class="school-links" aria-label="TESDA link">
-            <a class="school-link" href="https://www.tesda.gov.ph/" target="_blank" rel="noopener" aria-label="TESDA website, tesda.gov.ph (opens in a new tab)">
+            <a class="school-link" href="https://www.tesda.gov.ph/" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9S14.6 18.4 12 21c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg>
-              <span><b>TESDA website</b><i>tesda.gov.ph</i></span>
+              <span><b>TESDA website</b><i>tesda.gov.ph</i><span class="sr-only">, Technical Education and Skills Development Authority, opens in a new tab</span></span>
               <svg class="school-link__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
             </a>
           </div></div></li>
         <li class="reveal"><b class="yr">2019</b><div><span>2018 — 2019</span><h3>Senior High School · TVL-ICT, Computer System Servicing</h3><p>Informatic Computer Institute of Agusan del Sur · With Honors</p><p class="edu__note">Completed 486 hours as an administrative assistant managing paper works and data encoding, honing organizational skills and attention to detail.</p><ul class="tags" aria-label="Skills"><li>OSHA 10-Hour</li><li>Laptops</li></ul><div class="school-links" aria-label="Informatic Computer Institute link">
-            <a class="school-link" href="https://www.facebook.com/InformaticComputerInstituteOfAgusanDelSur/" target="_blank" rel="noopener" aria-label="Official Facebook page, Informatic Computer Institute (opens in a new tab)">
+            <a class="school-link" href="https://www.facebook.com/InformaticComputerInstituteOfAgusanDelSur/" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.7c0-.9.3-1.5 1.5-1.5h1.6V4.5c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.2H7.9v3h2.6V21h3z"/></svg>
-              <span><b>Official Facebook page</b><i>Informatic Computer Institute</i></span>
+              <span><b>Official Facebook page</b><i>Informatic Computer Institute</i><span class="sr-only">, Informatic Computer Institute of Agusan del Sur, opens in a new tab</span></span>
               <svg class="school-link__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
             </a>
           </div></div></li>
         <li class="reveal"><b class="yr">2013</b><div><span>2008 — 2013</span><h3>Elementary</h3><p>Consuelo Elementary School · With Honors</p><div class="school-links" aria-label="Consuelo Elementary School link">
-            <a class="school-link" href="https://mapcarta.com/W966346490" target="_blank" rel="noopener" aria-label="View school on map, mapcarta.com (opens in a new tab)">
+            <a class="school-link" href="https://mapcarta.com/W966346490" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-10.5a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.4"/></svg>
-              <span><b>View school on map</b><i>mapcarta.com</i></span>
+              <span><b>View school on map</b><i>mapcarta.com</i><span class="sr-only">, Consuelo Elementary School, opens in a new tab</span></span>
               <svg class="school-link__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
             </a>
           </div></div></li>
@@ -557,10 +557,10 @@ $moments = [
           <label class="topic"><input type="radio" name="subject" value="General question"><span>General question</span></label>
         </fieldset>
         <div class="form__row">
-          <div class="field"><input id="f-name" name="name" type="text" placeholder=" " required maxlength="100" autocomplete="name"><label for="f-name">Your name</label><small class="err" data-for="name"></small></div>
-          <div class="field"><input id="f-email" name="email" type="email" placeholder=" " required maxlength="160" autocomplete="email"><label for="f-email">Email address</label><small class="err" data-for="email"></small></div>
+          <div class="field"><input id="f-name" name="name" type="text" placeholder=" " required maxlength="100" autocomplete="name"><label for="f-name">Your name</label><small class="err" id="err-name" data-for="name"></small></div>
+          <div class="field"><input id="f-email" name="email" type="email" placeholder=" " required maxlength="160" autocomplete="email"><label for="f-email">Email address</label><small class="err" id="err-email" data-for="email"></small></div>
         </div>
-        <div class="field"><textarea id="f-message" name="message" rows="5" placeholder=" " required maxlength="5000"></textarea><label for="f-message">Your message</label><small class="err" data-for="message"></small></div>
+        <div class="field"><textarea id="f-message" name="message" rows="5" placeholder=" " required maxlength="5000"></textarea><label for="f-message">Your message</label><small class="err" id="err-message" data-for="message"></small></div>
         <button class="btn btn--gold btn--block" type="submit" data-magnetic><span class="btn__label">Send message</span><span class="btn__spin" aria-hidden="true"></span></button>
         <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
         <p class="form__note">Your details are only used to reply to your message.</p>

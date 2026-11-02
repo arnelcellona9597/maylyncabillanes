@@ -146,8 +146,21 @@
     idx = (i + items.length) % items.length;
     lbi.src = 'assets/img/' + items[idx].dataset.full + '.jpg'; lbi.alt = items[idx].dataset.alt;
   }
-  function open(i) { show(i); lb.hidden = false; requestAnimationFrame(function () { lb.classList.add('is-open'); }); document.body.style.overflow = 'hidden'; }
-  function close() { lb.classList.remove('is-open'); setTimeout(function () { lb.hidden = true; document.body.style.overflow = ''; }, 400); }
+  var lbOpener = null, lbClose = lb.querySelector('.lightbox__close');
+  function open(i) {
+    lbOpener = document.activeElement;
+    show(i); lb.hidden = false;
+    requestAnimationFrame(function () { lb.classList.add('is-open'); });
+    document.body.style.overflow = 'hidden';
+    setTimeout(function () { if (lbClose) lbClose.focus({ preventScroll: true }); }, 30);
+  }
+  function close() {
+    lb.classList.remove('is-open');
+    setTimeout(function () {
+      lb.hidden = true; document.body.style.overflow = '';
+      if (lbOpener && document.body.contains(lbOpener)) { try { lbOpener.focus({ preventScroll: true }); } catch (e) {} }
+    }, 400);
+  }
   items.forEach(function (it, i) { it.addEventListener('click', function () { open(i); }); });
   lb.querySelector('.lightbox__close').addEventListener('click', close);
   lb.querySelector('.lightbox__prev').addEventListener('click', function () { show(idx - 1); });
@@ -156,5 +169,13 @@
   document.addEventListener('keydown', function (e) {
     if (lb.hidden) return;
     if (e.key === 'Escape') close(); if (e.key === 'ArrowLeft') show(idx - 1); if (e.key === 'ArrowRight') show(idx + 1);
+    if (e.key === 'Tab') { /* keep keyboard focus inside the viewer */
+      var f = [].slice.call(lb.querySelectorAll('button')).filter(function (x) { return x.offsetParent !== null; });
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      else if (!lb.contains(document.activeElement)) { e.preventDefault(); first.focus(); }
+    }
   });
 })();
