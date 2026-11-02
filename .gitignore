@@ -1,0 +1,9 @@
+.env
+*.local.php
+storage/
+*.log
+.DS_Store
+Thumbs.db
+deploy.local.*
+.idea/
+.vscode/
