@@ -5,16 +5,23 @@
   var view = document.getElementById('galleryViewport'), rail = document.getElementById('rail');
   var prev = document.getElementById('galPrev'), next = document.getElementById('galNext');
   var dotsEl = document.getElementById('galDots'), playBtn = document.getElementById('galPlay');
+  var curEl = document.getElementById('galCur'), totalEl = document.getElementById('galTotal'), playLabel = playBtn.querySelector('.slider__play-label');
   var items = [].slice.call(rail.querySelectorAll('.g-item'));
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var DELAY = 4800;
+  var DELAY = 2000;
   var positions = [0], index = 0, playing = !reduce, inView = false, hovered = false, focused = false;
   var timer = 0, dragging = false, startX = 0, startShift = 0, moved = 0, curShift = 0;
 
   function padLeft() { return parseFloat(getComputedStyle(rail).paddingLeft) || 0; }
 
+  function perView(w) { return w >= 1100 ? 4.25 : w >= 768 ? 3.25 : w >= 520 ? 2.25 : 1.35; }
+
   function measure() {
-    var pad = padLeft(), vw = view.clientWidth;
+    /* Full-bleed: size cards so a whole number (or a peek on phones) fills the width edge to edge. */
+    var vw = view.clientWidth, cs = getComputedStyle(rail), pad = parseFloat(cs.paddingLeft) || 0;
+    var gap = parseFloat(cs.columnGap) || 0, n = perView(window.innerWidth);
+    rail.style.setProperty('--iw', Math.floor((vw - pad * 2 - gap * (Math.ceil(n) - 1)) / n) + 'px');
+    void rail.offsetWidth;
     var maxShift = Math.max(0, rail.scrollWidth - vw);
     positions = [];
     for (var i = 0; i < items.length; i++) {
@@ -46,7 +53,9 @@
       d.setAttribute('aria-selected', on ? 'true' : 'false');
       d.style.setProperty('--dur', DELAY + 'ms');
     });
-    root.classList.toggle('is-playing', playing && !hovered && !focused && inView);
+    root.classList.toggle('is-playing', playing && !focused && inView);
+    if (curEl) { curEl.textContent = String(index + 1).padStart(2, '0'); totalEl.textContent = String(positions.length).padStart(2, '0'); }
+    if (playLabel) playLabel.textContent = playing ? 'Pause' : 'Play';
   }
 
   function go(i, instant) {
@@ -61,7 +70,7 @@
   function tick() {
     clearTimeout(timer); timer = 0;
     var lb = document.getElementById('lightbox');
-    if (playing && !hovered && !focused && inView && !dragging && !document.hidden && !(lb && !lb.hidden)) {
+    if (playing && !focused && inView && !dragging && !document.hidden && !(lb && !lb.hidden)) {
       timer = setTimeout(function () { go(index + 1); tick(); }, DELAY);
     }
     paint();
@@ -78,8 +87,6 @@
     tick();
   });
 
-  root.addEventListener('mouseenter', function () { hovered = true; tick(); });
-  root.addEventListener('mouseleave', function () { hovered = false; tick(); });
   root.addEventListener('focusin', function (e) { focused = !!(e.target.matches && e.target.matches(':focus-visible')); tick(); });
   root.addEventListener('focusout', function () { focused = false; tick(); });
   document.addEventListener('visibilitychange', tick);
