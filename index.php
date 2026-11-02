@@ -7,6 +7,89 @@ if (empty($_SESSION['csrf'])) {
 }
 $theme = ($_COOKIE['theme'] ?? '') === 'light' ? 'light' : 'dark';
 $year = date('Y');
+$site = 'https://maylyncabillanes.com';
+$ogImage = $site . '/assets/img/og-image.jpg?v=1';
+$modified = date('c', filemtime(__FILE__));
+$schema = [
+    '@context' => 'https://schema.org',
+    '@graph' => [
+        [
+            '@type' => 'WebSite',
+            '@id' => "$site/#website",
+            'url' => "$site/",
+            'name' => 'Maylyn Cabillanes',
+            'description' => 'Professional portfolio of Maylyn Cabillanes, Human Resource Management Staff in Davao City.',
+            'inLanguage' => 'en-PH',
+            'publisher' => ['@id' => "$site/#person"],
+        ],
+        [
+            '@type' => 'ProfilePage',
+            '@id' => "$site/#webpage",
+            'url' => "$site/",
+            'name' => 'Maylyn Cabillanes | Human Resource Management Staff',
+            'isPartOf' => ['@id' => "$site/#website"],
+            'about' => ['@id' => "$site/#person"],
+            'mainEntity' => ['@id' => "$site/#person"],
+            'primaryImageOfPage' => ['@id' => "$site/#primaryimage"],
+            'inLanguage' => 'en-PH',
+            'dateModified' => $modified,
+        ],
+        [
+            '@type' => 'ImageObject',
+            '@id' => "$site/#primaryimage",
+            'url' => "$site/assets/img/og-image.jpg",
+            'contentUrl' => "$site/assets/img/og-image.jpg",
+            'width' => 1200,
+            'height' => 630,
+            'caption' => 'Maylyn Cabillanes, Human Resource Management Staff',
+        ],
+        [
+            '@type' => 'Person',
+            '@id' => "$site/#person",
+            'name' => 'Maylyn Cabillanes',
+            'givenName' => 'Maylyn',
+            'familyName' => 'Cabillanes',
+            'url' => "$site/",
+            'image' => [
+                '@type' => 'ImageObject',
+                'url' => "$site/assets/img/portrait-3.jpg",
+                'width' => 1024,
+                'height' => 1024,
+            ],
+            'jobTitle' => 'Human Resource Management Staff',
+            'description' => "Human Resource Management Staff at the Philippine Postal Corporation and BS Information Technology graduate (Dean's Lister).",
+            'email' => 'mailto:info@maylyncabillanes.com',
+            'worksFor' => [
+                '@type' => 'GovernmentOrganization',
+                'name' => 'Philippine Postal Corporation',
+                'alternateName' => 'PHLPost',
+                'url' => 'https://phlpost.gov.ph/',
+            ],
+            'hasOccupation' => [
+                '@type' => 'Occupation',
+                'name' => 'Human Resource Management Staff',
+                'occupationLocation' => ['@type' => 'City', 'name' => 'Davao City'],
+            ],
+            'alumniOf' => [
+                '@type' => 'CollegeOrUniversity',
+                'name' => 'Agusan del Sur State College of Agriculture and Technology',
+            ],
+            'hasCredential' => [
+                ['@type' => 'EducationalOccupationalCredential', 'name' => 'Bachelor of Science in Information Technology', 'credentialCategory' => 'degree'],
+                ['@type' => 'EducationalOccupationalCredential', 'name' => 'Food Processing NC II', 'credentialCategory' => 'certificate', 'recognizedBy' => ['@type' => 'GovernmentOrganization', 'name' => 'TESDA']],
+            ],
+            'knowsAbout' => ['Human resource management', 'Records management', 'Public service', 'Information technology', 'Learning and development'],
+            'homeLocation' => ['@type' => 'Place', 'address' => ['@type' => 'PostalAddress', 'addressLocality' => 'Davao City', 'addressCountry' => 'PH']],
+            'contactPoint' => [
+                '@type' => 'ContactPoint',
+                'contactType' => 'professional inquiries',
+                'email' => 'info@maylyncabillanes.com',
+                'availableLanguage' => ['English', 'Filipino'],
+            ],
+            'sameAs' => ['https://www.facebook.com/maylyn.cabillanes'],
+        ],
+    ],
+];
 
 function img(string $name, string $alt, string $class = '', string $loading = 'lazy'): string
 {
@@ -29,27 +112,44 @@ $moments = [
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Maylyn Cabillanes | Human Resource Management Staff</title>
-<meta name="description" content="Maylyn Cabillanes — Human Resource Management Staff at the Philippine Postal Corporation, Davao City. BS Information Technology graduate and Dean's Lister.">
+<title>Maylyn Cabillanes | Human Resource Management Staff, Davao City</title>
+<meta name="description" content="Maylyn Cabillanes is a Human Resource Management Staff member at the Philippine Postal Corporation in Davao City, and a BS Information Technology graduate and Dean's Lister.">
+<meta name="keywords" content="Maylyn Cabillanes, Human Resource Management Staff, HR, Philippine Postal Corporation, PHLPost, Davao City, BS Information Technology">
+<meta name="author" content="Maylyn Cabillanes">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#0d0b0e">
-<meta property="og:title" content="Maylyn Cabillanes | Human Resource Management Staff">
-<meta property="og:description" content="Where people, process and technology meet.">
-<meta property="og:image" content="https://maylyncabillanes.com/assets/img/portrait-3.jpg">
+<link rel="canonical" href="<?= $site ?>/">
+<link rel="alternate" hreflang="en" href="<?= $site ?>/">
+<link rel="manifest" href="/site.webmanifest">
 <link rel="icon" href="/favicon.ico" sizes="48x48">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png">
 <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
-<link rel="canonical" href="https://maylyncabillanes.com/">
-<meta name="robots" content="index, follow, max-image-preview:large">
-<meta name="author" content="Maylyn Cabillanes">
-<meta property="og:type" content="website">
+
+<!-- Open Graph (Facebook, LinkedIn, WhatsApp, Messenger, Telegram, Viber) -->
+<meta property="og:type" content="profile">
 <meta property="og:site_name" content="Maylyn Cabillanes">
-<meta property="og:url" content="https://maylyncabillanes.com/">
+<meta property="og:locale" content="en_PH">
+<meta property="og:url" content="<?= $site ?>/">
+<meta property="og:title" content="Maylyn Cabillanes | Human Resource Management Staff">
+<meta property="og:description" content="Human Resource Management Staff at the Philippine Postal Corporation, Davao City. Where people, process and technology meet.">
+<meta property="og:image" content="<?= $ogImage ?>">
+<meta property="og:image:secure_url" content="<?= $ogImage ?>">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Maylyn Cabillanes, Human Resource Management Staff, Davao City">
+<meta property="profile:first_name" content="Maylyn">
+<meta property="profile:last_name" content="Cabillanes">
+
+<!-- Twitter / X -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://maylyncabillanes.com/assets/img/portrait-3.jpg">
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Maylyn Cabillanes","url":"https://maylyncabillanes.com/","image":"https://maylyncabillanes.com/assets/img/portrait-3.jpg","jobTitle":"Human Resource Management Staff","worksFor":{"@type":"Organization","name":"Philippine Postal Corporation","url":"https://phlpost.gov.ph/"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Agusan del Sur State College of Agriculture and Technology"},"address":{"@type":"PostalAddress","addressLocality":"Davao City","addressCountry":"PH"},"email":"mailto:info@maylyncabillanes.com","sameAs":["https://www.facebook.com/maylyn.cabillanes"]}
-</script>
+<meta name="twitter:title" content="Maylyn Cabillanes | Human Resource Management Staff">
+<meta name="twitter:description" content="Human Resource Management Staff at the Philippine Postal Corporation, Davao City.">
+<meta name="twitter:image" content="<?= $ogImage ?>">
+<meta name="twitter:image:alt" content="Maylyn Cabillanes, Human Resource Management Staff, Davao City">
+
+<script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) ?></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
