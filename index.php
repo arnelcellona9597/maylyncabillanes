@@ -71,15 +71,27 @@ $schema = [
                 'occupationLocation' => ['@type' => 'City', 'name' => 'Davao City'],
             ],
             'alumniOf' => [
-                '@type' => 'CollegeOrUniversity',
-                'name' => 'Agusan del Sur State University',
-                'alternateName' => 'Agusan del Sur State College of Agriculture and Technology',
-                'url' => 'https://adssu.edu.ph',
-                'sameAs' => ['https://www.facebook.com/ADSSUarise'],
+                [
+                    '@type' => 'CollegeOrUniversity',
+                    'name' => 'Agusan del Sur State University',
+                    'alternateName' => 'Agusan del Sur State College of Agriculture and Technology',
+                    'url' => 'https://adssu.edu.ph',
+                    'sameAs' => ['https://www.facebook.com/ADSSUarise'],
+                ],
+                [
+                    '@type' => 'EducationalOrganization',
+                    'name' => 'Informatic Computer Institute of Agusan del Sur',
+                    'sameAs' => ['https://www.facebook.com/InformaticComputerInstituteOfAgusanDelSur/'],
+                ],
+                [
+                    '@type' => 'EducationalOrganization',
+                    'name' => 'Consuelo Elementary School',
+                    'sameAs' => ['https://mapcarta.com/W966346490'],
+                ],
             ],
             'hasCredential' => [
                 ['@type' => 'EducationalOccupationalCredential', 'name' => 'Bachelor of Science in Information Technology', 'credentialCategory' => 'degree'],
-                ['@type' => 'EducationalOccupationalCredential', 'name' => 'Food Processing NC II', 'credentialCategory' => 'certificate', 'recognizedBy' => ['@type' => 'GovernmentOrganization', 'name' => 'TESDA']],
+                ['@type' => 'EducationalOccupationalCredential', 'name' => 'Food Processing NC II', 'credentialCategory' => 'certificate', 'recognizedBy' => ['@type' => 'GovernmentOrganization', 'name' => 'TESDA', 'url' => 'https://www.tesda.gov.ph/']],
             ],
             'award' => ["Dean's Lister, BS Information Technology", 'Food Processing certificate, TESDA (September 2022)'],
             'knowsAbout' => ['Human resource management', 'Records management', 'Public service', 'Information technology', 'ICT network maintenance', 'Computer system servicing', 'Learning and development'],
@@ -327,7 +339,7 @@ $moments = [
             <div>
               <span class="chip">Certificate · Sep 2022</span>
               <h4>Food Processing</h4>
-              <p class="award__org">Issued by TESDA · Associated with TESDA</p>
+              <p class="award__org">Issued by <a class="link" href="https://www.tesda.gov.ph/" target="_blank" rel="noopener">TESDA<span aria-hidden="true"> ↗</span></a> · Associated with TESDA</p>
               <p>I completed a certificate in Food Processing focused on Tocino and Longganisa production. The program gave me hands-on experience in meat preservation, seasoning and food safety standards, and I’m passionate about preserving culinary traditions.</p>
             </div>
           </article>
@@ -371,9 +383,27 @@ $moments = [
             </a>
           </div>
         </div></li>
-        <li class="reveal"><b class="yr">2022</b><div><span>Sep 2022</span><h3>Vocational · Food Technology and Processing</h3><p>TESDA — Technical Education and Skills Development Authority</p></div></li>
-        <li class="reveal"><b class="yr">2019</b><div><span>2018 — 2019</span><h3>Senior High School · TVL-ICT, Computer System Servicing</h3><p>Informatic Computer Institute of Agusan del Sur · With Honors</p><p class="edu__note">Completed 486 hours as an administrative assistant managing paper works and data encoding, honing organizational skills and attention to detail.</p><ul class="tags" aria-label="Skills"><li>OSHA 10-Hour</li><li>Laptops</li></ul></div></li>
-        <li class="reveal"><b class="yr">2013</b><div><span>2008 — 2013</span><h3>Elementary</h3><p>Consuelo Elementary School · With Honors</p></div></li>
+        <li class="reveal"><b class="yr">2022</b><div><span>Sep 2022</span><h3>Vocational · Food Technology and Processing</h3><p>TESDA — Technical Education and Skills Development Authority</p><div class="school-links" aria-label="TESDA link">
+            <a class="school-link" href="https://www.tesda.gov.ph/" target="_blank" rel="noopener" aria-label="TESDA website, tesda.gov.ph (opens in a new tab)">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.6 2.6 3.9 5.6 3.9 9S14.6 18.4 12 21c-2.6-2.6-3.9-5.6-3.9-9S9.4 5.6 12 3z"/></svg>
+              <span><b>TESDA website</b><i>tesda.gov.ph</i></span>
+              <svg class="school-link__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+          </div></div></li>
+        <li class="reveal"><b class="yr">2019</b><div><span>2018 — 2019</span><h3>Senior High School · TVL-ICT, Computer System Servicing</h3><p>Informatic Computer Institute of Agusan del Sur · With Honors</p><p class="edu__note">Completed 486 hours as an administrative assistant managing paper works and data encoding, honing organizational skills and attention to detail.</p><ul class="tags" aria-label="Skills"><li>OSHA 10-Hour</li><li>Laptops</li></ul><div class="school-links" aria-label="Informatic Computer Institute link">
+            <a class="school-link" href="https://www.facebook.com/InformaticComputerInstituteOfAgusanDelSur/" target="_blank" rel="noopener" aria-label="Official Facebook page, Informatic Computer Institute (opens in a new tab)">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.7c0-.9.3-1.5 1.5-1.5h1.6V4.5c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.2H7.9v3h2.6V21h3z"/></svg>
+              <span><b>Official Facebook page</b><i>Informatic Computer Institute</i></span>
+              <svg class="school-link__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+          </div></div></li>
+        <li class="reveal"><b class="yr">2013</b><div><span>2008 — 2013</span><h3>Elementary</h3><p>Consuelo Elementary School · With Honors</p><div class="school-links" aria-label="Consuelo Elementary School link">
+            <a class="school-link" href="https://mapcarta.com/W966346490" target="_blank" rel="noopener" aria-label="View school on map, mapcarta.com (opens in a new tab)">
+              <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-10.5a6.5 6.5 0 0 1 13 0C18.5 15.4 12 21 12 21z"/><circle cx="12" cy="10.5" r="2.4"/></svg>
+              <span><b>View school on map</b><i>mapcarta.com</i></span>
+              <svg class="school-link__go" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
+          </div></div></li>
       </ul>
     </div>
   </div>
