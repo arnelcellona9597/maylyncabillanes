@@ -344,7 +344,7 @@ body.menu-lock{overflow:hidden}
 .school-link b{font:500 .9rem var(--font-body);letter-spacing:.02em}
 .school-link i{font-style:normal;font-size:.76rem;letter-spacing:.06em;color:var(--muted);transition:color .4s}
 .school-link__go{flex:none;color:var(--muted);margin-left:4px;transition:transform .5s var(--ease),color .4s}
-.school-link:hover{transform:translateY(-3px);border-color:var(--accent);color:var(--accent-ink);box-shadow:0 16px 34px -16px var(--gold)}
+.school-link:hover{transform:scale(1.025);border-color:var(--accent);color:var(--accent-ink);box-shadow:0 16px 34px -16px var(--gold)}
 .school-link:hover::before{transform:translateX(0)}
 .school-link:hover>svg:first-child,.school-link:hover i,.school-link:hover .school-link__go{color:var(--accent-ink)}
 .school-link:hover .school-link__go{transform:translate(3px,-3px)}
@@ -355,3 +355,17 @@ body.menu-lock{overflow:hidden}
 .edu__list .school-link b{color:var(--text);text-transform:none;letter-spacing:.01em;transition:color .4s}
 .edu__list .school-link:hover b{color:var(--accent-ink)}
 .edu__list .school-link:hover i{color:var(--accent-ink)}
+
+/* Education links: keep rows tidy when a row has a single link; award-card inline link */
+.edu__list>li .school-links:only-child{margin-top:16px}
+.edu__list>li p+.school-links{margin-top:14px}
+.award__org .link{color:inherit;background-image:linear-gradient(currentColor,currentColor);background-position:0 100%;background-size:0 1px;background-repeat:no-repeat;transition:background-size .5s var(--ease),color .3s}
+.award__org .link:hover{color:var(--text);background-size:100% 1px}
+.award__org .link span{display:inline-block;transition:transform .4s var(--ease)}
+.award__org .link:hover span{transform:translate(2px,-2px)}
+.school-link{will-change:transform;backface-visibility:hidden}
+@media (hover:none){.school-link:hover{transform:none}}
+/* Sync text colour with the sliding fill so contrast never dips mid-hover */
+.school-link{transition:transform .6s var(--ease),border-color .5s var(--ease),box-shadow .6s var(--ease),color .6s var(--ease)}
+.edu__list .school-link b,.edu__list .school-link i,.school-link>svg{transition:color .6s var(--ease),transform .6s var(--ease)}
+.school-link:hover b,.school-link:hover i,.school-link:hover>svg{transition-delay:.08s}
