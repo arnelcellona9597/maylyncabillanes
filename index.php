@@ -128,7 +128,19 @@ $moments = [
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<?php if (preg_match('/(^|\.)maylyncabillanes\.com$/i', $_SERVER['HTTP_HOST'] ?? '')): // Analytics only on the live domain, never on localhost ?>
+<script>
+  // Consent Mode v2: analytics stays denied until the visitor accepts (choice is restored on return visits).
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied', wait_for_update: 500 });
+  (function () {
+    var v = null;
+    try { v = localStorage.getItem('cookie-consent'); } catch (e) {}
+    if (!v) { var m = document.cookie.match(/(?:^|; )cookie_consent=(granted|denied)/); v = m && m[1]; }
+    if (v === 'granted') gtag('consent', 'update', { analytics_storage: 'granted' });
+  })();
+</script>
+<?php if (preg_match('/(^|\.)maylyncabillanes\.com(:\d+)?$/i', $_SERVER['HTTP_HOST'] ?? '')): // Analytics only on the live domain, never on localhost ?>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTC7HK73VF"></script>
 <script>
@@ -581,10 +593,43 @@ $moments = [
     </div>
     <div class="footer__bottom">
       <span>© <?= $year ?> Maylyn Cabillanes. All rights reserved.</span>
+      <div class="footer__legal">
+        <button type="button" class="footer__link" id="cookieSettings">Cookie settings</button>
+        <button type="button" class="footer__link" data-open-privacy>Privacy</button>
+      </div>
       <a href="#top" class="totop" aria-label="Back to top" data-magnetic><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
     </div>
   </div>
 </footer>
+
+<div class="consent" id="consent" role="region" aria-label="Cookie consent" hidden>
+  <span class="consent__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.2A9 9 0 1 1 11.8 3a3.5 3.5 0 0 0 4.2 4.2A3.5 3.5 0 0 0 21 12.2z"/><circle cx="8.5" cy="11" r=".8" fill="currentColor"/><circle cx="12.5" cy="15.5" r=".8" fill="currentColor"/><circle cx="15.5" cy="11.5" r=".8" fill="currentColor"/></svg></span>
+  <div class="consent__body">
+    <h2 class="consent__title">Your privacy matters</h2>
+    <p>I use cookies only to understand how visitors use this site (Google Analytics). They stay off unless you accept. <button type="button" class="consent__link" data-open-privacy>Read the privacy notice</button></p>
+  </div>
+  <div class="consent__actions">
+    <button type="button" class="btn btn--ghost btn--sm" id="consentDecline"><span>Decline</span></button>
+    <button type="button" class="btn btn--gold btn--sm" id="consentAccept"><span>Accept</span></button>
+  </div>
+</div>
+
+<dialog class="privacy" id="privacy" aria-labelledby="privacyTitle">
+  <div class="privacy__inner">
+    <button type="button" class="privacy__close" id="privacyClose" aria-label="Close privacy notice">×</button>
+    <p class="eyebrow">Privacy</p>
+    <h2 id="privacyTitle" class="privacy__title">Privacy &amp; cookies</h2>
+    <h3>Contact form</h3>
+    <p>The name, email and message you send are used only to reply to you. They are delivered by email to Maylyn Cabillanes and are not sold or shared.</p>
+    <h3>Cookies</h3>
+    <p><b>Essential:</b> your light or dark theme, your cookie choice, and a session cookie that protects the contact form from abuse.</p>
+    <p><b>Analytics (only if you accept):</b> Google Analytics 4 collects anonymous usage statistics such as pages viewed, device type and approximate location. Nothing is sent to Google Analytics unless you accept, and you can change your mind at any time with “Cookie settings” in the footer.</p>
+    <h3>Third parties</h3>
+    <p>Fonts are loaded from Google Fonts, and links to other sites follow their own privacy policies.</p>
+    <h3>Your rights</h3>
+    <p>Under the Philippine Data Privacy Act of 2012 you may ask to access, correct or delete your information at <a class="link" href="mailto:info@maylyncabillanes.com">info@maylyncabillanes.com</a>.</p>
+  </div>
+</dialog>
 
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
   <button type="button" class="lightbox__close" aria-label="Close">×</button>
@@ -599,6 +644,7 @@ $moments = [
 <script src="assets/js/hearts.js"></script>
 <script src="assets/js/gallery.js"></script>
 <script src="assets/js/contact.js"></script>
+<script src="assets/js/consent.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>
