@@ -8,12 +8,19 @@
   function clearErrors() {
     form.querySelectorAll('.field').forEach(function (f) { f.classList.remove('has-error'); });
     form.querySelectorAll('.err').forEach(function (e) { e.textContent = ''; });
+    form.querySelectorAll('[aria-invalid]').forEach(function (i) { i.removeAttribute('aria-invalid'); i.removeAttribute('aria-describedby'); });
   }
   function showErrors(errs) {
     Object.keys(errs).forEach(function (k) {
       var s = form.querySelector('.err[data-for="' + k + '"]');
-      if (s) { s.textContent = errs[k]; s.parentElement.classList.add('has-error'); }
+      if (s) {
+        s.textContent = errs[k]; s.parentElement.classList.add('has-error');
+        var input = form.elements[k];
+        if (input && input.setAttribute) { input.setAttribute('aria-invalid', 'true'); if (s.id) input.setAttribute('aria-describedby', s.id); }
+      }
     });
+    var first = form.querySelector('[aria-invalid="true"]');
+    if (first) first.focus();
   }
 
   form.addEventListener('submit', function (e) {

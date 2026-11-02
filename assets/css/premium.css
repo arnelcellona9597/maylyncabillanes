@@ -412,3 +412,14 @@ body.menu-lock{overflow:hidden}
 @media (prefers-reduced-motion:reduce){.consent,.privacy[open]{transition:none;animation:none}}
 .footer__link{padding:11px 12px}
 @media (max-width:560px){.footer__legal{margin-left:-12px}}
+
+/* Accessibility */
+.sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:root[data-theme="light"]{--accent:#86601f}
+main:focus{outline:none}
+/* Popups open in the browser top layer, above the custom cursor: show the native cursor while one is open */
+body.native-cursor,body.native-cursor *{cursor:auto!important}
+body.native-cursor a,body.native-cursor button,body.native-cursor summary,body.native-cursor label.topic span{cursor:pointer!important}
+body.native-cursor .cursor{opacity:0;visibility:hidden}
+dialog.privacy,dialog.privacy::backdrop{cursor:auto}
+[tabindex="-1"]:focus{outline:none}
