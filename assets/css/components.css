@@ -37,7 +37,7 @@
 .burger span:first-child{transform:translateY(-4px)}.burger span:last-child{transform:translateY(4px)}
 .nav.menu-open .burger span:first-child{transform:rotate(45deg)}
 .nav.menu-open .burger span:last-child{transform:rotate(-45deg)}
-@media (max-width:760px){.burger{display:grid}.burger:hover{transform:none}}
+@media (max-width:1100px){.burger{display:grid}.burger:hover{transform:none}}
 
 /* Cards */
 .card{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:30px;overflow:hidden;
