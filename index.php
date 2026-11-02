@@ -395,12 +395,27 @@ $moments = [
       <h2 class="h2 reveal">Moments &amp; portraits.</h2>
     </header>
   </div>
-  <div class="gallery__rail" id="rail">
-    <button type="button" class="g-item" data-full="portrait-1" data-alt="Full-length studio portrait of Maylyn Cabillanes"><?= img('portrait-1', 'Full-length studio portrait of Maylyn Cabillanes') ?></button>
-    <?php foreach ($moments as [$n, $alt]): ?>
-    <button type="button" class="g-item" data-full="<?= $n ?>" data-alt="<?= htmlspecialchars($alt, ENT_QUOTES) ?>"><?= img($n, $alt) ?></button>
-    <?php endforeach; ?>
-    <button type="button" class="g-item" data-full="portrait-4" data-alt="Studio portrait of Maylyn Cabillanes"><?= img('portrait-4', 'Studio portrait of Maylyn Cabillanes') ?></button>
+  <div class="slider" id="gallerySlider" role="region" aria-roledescription="carousel" aria-label="Photo gallery">
+    <div class="gallery__viewport" id="galleryViewport">
+      <div class="gallery__rail" id="rail" aria-live="off">
+        <button type="button" class="g-item" data-full="portrait-1" data-alt="Full-length studio portrait of Maylyn Cabillanes"><?= img('portrait-1', 'Full-length studio portrait of Maylyn Cabillanes') ?></button>
+        <?php foreach ($moments as [$n, $alt]): ?>
+        <button type="button" class="g-item" data-full="<?= $n ?>" data-alt="<?= htmlspecialchars($alt, ENT_QUOTES) ?>"><?= img($n, $alt) ?></button>
+        <?php endforeach; ?>
+        <button type="button" class="g-item" data-full="portrait-4" data-alt="Studio portrait of Maylyn Cabillanes"><?= img('portrait-4', 'Studio portrait of Maylyn Cabillanes') ?></button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="slider__controls">
+        <button type="button" class="slider__btn" id="galPrev" aria-label="Previous photos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="slider__dots" id="galDots" role="tablist" aria-label="Choose slide"></div>
+        <button type="button" class="slider__btn" id="galNext" aria-label="Next photos"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        <button type="button" class="slider__btn slider__play" id="galPlay" aria-label="Pause autoplay" aria-pressed="true">
+          <svg class="i-pause" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
+          <svg class="i-play" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg>
+        </button>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -523,6 +538,7 @@ $moments = [
 <script src="assets/js/scroll.js"></script>
 <script src="assets/js/effects.js"></script>
 <script src="assets/js/hearts.js"></script>
+<script src="assets/js/gallery.js"></script>
 <script src="assets/js/contact.js"></script>
 <script src="assets/js/main.js"></script>
 </body>

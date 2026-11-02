@@ -139,17 +139,6 @@
   }
   if (!reduce) window.addEventListener('scrollupdate', parallax);
 
-  /* Gallery horizontal drift on vertical scroll */
-  var rail = document.getElementById('rail');
-  if (rail && !reduce) {
-    window.addEventListener('scrollupdate', function () {
-      var sec = rail.parentElement, r = sec.getBoundingClientRect(), vh = window.innerHeight;
-      if (r.bottom < 0 || r.top > vh) return;
-      var p = (vh - r.top) / (vh + r.height), over = Math.max(0, rail.scrollWidth - window.innerWidth + 48);
-      rail.style.transform = 'translate3d(' + (-over * Math.min(1, Math.max(0, p * 1.15 - .05))) + 'px,0,0)';
-    });
-  }
-
   /* Lightbox */
   var lb = document.getElementById('lightbox'), lbi = document.getElementById('lightboxImg');
   var items = $('.g-item, .c-item'), idx = 0;
