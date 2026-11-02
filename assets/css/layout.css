@@ -79,9 +79,9 @@
 /* EDUCATION */
 .edu{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(40px,7vw,100px);align-items:center}
 .edu__list{display:grid;gap:0;margin-top:34px}
-.edu__list li{padding:26px 0;border-top:1px solid var(--line);transition:padding .5s var(--ease)}
-.edu__list li:last-child{border-bottom:1px solid var(--line)}
-.edu__list li:hover{padding-left:16px}
+.edu__list>li{padding:26px 0;border-top:1px solid var(--line);transition:padding .5s var(--ease)}
+.edu__list>li:last-child{border-bottom:1px solid var(--line)}
+.edu__list>li:hover{padding-left:16px}
 .edu__list span{font-size:.75rem;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
 .edu__list h3{font-size:1.7rem;margin:8px 0 6px}
 .edu__list p{margin:0;color:var(--muted)}
