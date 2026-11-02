@@ -78,6 +78,7 @@ $schema = [
                 ['@type' => 'EducationalOccupationalCredential', 'name' => 'Bachelor of Science in Information Technology', 'credentialCategory' => 'degree'],
                 ['@type' => 'EducationalOccupationalCredential', 'name' => 'Food Processing NC II', 'credentialCategory' => 'certificate', 'recognizedBy' => ['@type' => 'GovernmentOrganization', 'name' => 'TESDA']],
             ],
+            'award' => ["Dean's Lister, BS Information Technology", 'Food Processing certificate, TESDA (September 2022)'],
             'knowsAbout' => ['Human resource management', 'Records management', 'Public service', 'Information technology', 'ICT network maintenance', 'Computer system servicing', 'Learning and development'],
             'homeLocation' => ['@type' => 'Place', 'address' => ['@type' => 'PostalAddress', 'addressLocality' => 'Davao City', 'addressCountry' => 'PH']],
             'contactPoint' => [
@@ -314,7 +315,31 @@ $moments = [
         <div class="trainings">
           <article class="train reveal" data-spot><span class="train__n">01</span><div><h4>Orientation on CSC Values-Driven Leadership</h4><p>Civil Service Commission / Philippine Postal Corporation</p></div><span class="chip">Managerial · 4 hrs</span></article>
           <article class="train reveal" data-spot><span class="train__n">02</span><div><h4>Earthquake Preparedness Lecture and Drill</h4><p>Philippine Postal Corporation · 2025</p></div><span class="chip">Technical · 4 hrs</span></article>
-          <article class="train reveal" data-spot><span class="train__n">03</span><div><h4>Food Processing NC II</h4><p>Technical Education and Skills Development Authority (TESDA)</p></div><span class="chip">Technical · 16 hrs</span></article>
+          <article class="train reveal" data-spot><span class="train__n">03</span><div><h4>Food Processing NC II</h4><p>Technical Education and Skills Development Authority (TESDA) · Sep 2022</p></div><span class="chip">Technical · 16 hrs</span></article>
+        </div>
+        <h3 class="h3 reveal">Honors &amp; awards</h3>
+        <div class="awards">
+          <article class="award reveal" data-spot>
+            <span class="award__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="m8.5 13.5-1.5 7 5-2.5 5 2.5-1.5-7"/></svg></span>
+            <div>
+              <span class="chip">Certificate · Sep 2022</span>
+              <h4>Food Processing</h4>
+              <p class="award__org">Issued by TESDA · Associated with TESDA</p>
+              <p>I completed a certificate in Food Processing focused on Tocino and Longganisa production. The program gave me hands-on experience in meat preservation, seasoning and food safety standards, and I’m passionate about preserving culinary traditions.</p>
+            </div>
+          </article>
+          <article class="award reveal" data-spot>
+            <span class="award__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="m8.5 13.5-1.5 7 5-2.5 5 2.5-1.5-7"/></svg></span>
+            <div><span class="chip">2019 — 2024</span><h4>Dean’s Lister</h4><p class="award__org">Agusan del Sur State College of Agriculture and Technology</p></div>
+          </article>
+          <article class="award reveal" data-spot>
+            <span class="award__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="m8.5 13.5-1.5 7 5-2.5 5 2.5-1.5-7"/></svg></span>
+            <div><span class="chip">2019</span><h4>With Honors, Senior High School</h4><p class="award__org">Informatic Computer Institute</p></div>
+          </article>
+          <article class="award reveal" data-spot>
+            <span class="award__icon" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="m8.5 13.5-1.5 7 5-2.5 5 2.5-1.5-7"/></svg></span>
+            <div><span class="chip">2013</span><h4>With Honors, Elementary</h4><p class="award__org">Consuelo Elementary School</p></div>
+          </article>
         </div>
       </div>
     </div>
@@ -329,7 +354,8 @@ $moments = [
       <p class="eyebrow reveal">Education</p>
       <h2 class="h2 reveal">Foundations of <em>excellence.</em></h2>
       <ul class="edu__list">
-        <li class="reveal"><b class="yr">2024</b><div><span>2019 — 2024</span><h3>Bachelor of Science in Information Technology</h3><p>Agusan del Sur State College of Agriculture and Technology · Dean’s Lister</p></div></li>
+        <li class="reveal"><b class="yr">2024</b><div><span>Aug 2019 — Jun 2024</span><h3>Bachelor of Science in Information Technology</h3><p>Agusan del Sur State College of Agriculture and Technology · Dean’s Lister</p><ul class="tags" aria-label="Skills"><li>Communication skills</li><li>Technical proficiency</li></ul></div></li>
+        <li class="reveal"><b class="yr">2022</b><div><span>Sep 2022</span><h3>Vocational · Food Technology and Processing</h3><p>TESDA — Technical Education and Skills Development Authority</p></div></li>
         <li class="reveal"><b class="yr">2019</b><div><span>2018 — 2019</span><h3>Senior High School · TVL-ICT, Computer System Servicing</h3><p>Informatic Computer Institute of Agusan del Sur · With Honors</p><p class="edu__note">Completed 486 hours as an administrative assistant managing paper works and data encoding, honing organizational skills and attention to detail.</p><ul class="tags" aria-label="Skills"><li>OSHA 10-Hour</li><li>Laptops</li></ul></div></li>
         <li class="reveal"><b class="yr">2013</b><div><span>2008 — 2013</span><h3>Elementary</h3><p>Consuelo Elementary School · With Honors</p></div></li>
       </ul>
