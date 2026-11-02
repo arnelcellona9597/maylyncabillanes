@@ -128,6 +128,17 @@ $moments = [
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<?php if (preg_match('/(^|\.)maylyncabillanes\.com$/i', $_SERVER['HTTP_HOST'] ?? '')): // Analytics only on the live domain, never on localhost ?>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZTC7HK73VF"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZTC7HK73VF');
+</script>
+<?php endif; ?>
 <title>Maylyn Cabillanes | Human Resource Management Staff, Davao City</title>
 <meta name="description" content="Maylyn Cabillanes is a Human Resource Management Staff member at the Philippine Postal Corporation in Davao City, and a BS Information Technology graduate and Dean's Lister.">
 <meta name="keywords" content="Maylyn Cabillanes, Human Resource Management Staff, HR, Philippine Postal Corporation, PHLPost, Davao City, BS Information Technology">
