@@ -279,3 +279,8 @@ body.menu-lock{overflow:hidden}
 .tags li:hover::before{transform:scaleY(1)}
 @media (hover:none){.tags li:hover{transform:none}}
 @media (prefers-reduced-motion:reduce){.tags li,.tags li::before{transition:none}}
+
+/* Timeline: dot centre must equal line centre (line 1px wide at 5px => 5.5px; dot 11px) */
+.timeline{--tl-pad:30px;padding-left:var(--tl-pad)}
+.timeline::before{left:5px;width:1px}
+.tl::before{left:calc(5.5px - var(--tl-pad) - 5.5px)}
