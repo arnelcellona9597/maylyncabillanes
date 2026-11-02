@@ -78,7 +78,7 @@ $schema = [
                 ['@type' => 'EducationalOccupationalCredential', 'name' => 'Bachelor of Science in Information Technology', 'credentialCategory' => 'degree'],
                 ['@type' => 'EducationalOccupationalCredential', 'name' => 'Food Processing NC II', 'credentialCategory' => 'certificate', 'recognizedBy' => ['@type' => 'GovernmentOrganization', 'name' => 'TESDA']],
             ],
-            'knowsAbout' => ['Human resource management', 'Records management', 'Public service', 'Information technology', 'Learning and development'],
+            'knowsAbout' => ['Human resource management', 'Records management', 'Public service', 'Information technology', 'ICT network maintenance', 'Computer system servicing', 'Learning and development'],
             'homeLocation' => ['@type' => 'Place', 'address' => ['@type' => 'PostalAddress', 'addressLocality' => 'Davao City', 'addressCountry' => 'PH']],
             'contactPoint' => [
                 '@type' => 'ContactPoint',
@@ -299,6 +299,16 @@ $moments = [
               <p>Completed a government-service internship providing administrative support, document handling and office coordination as part of the BSIT program.</p>
             </div>
           </li>
+          <li class="tl reveal">
+            <span class="tl__date">2018 — 2019</span>
+            <div class="tl__card card" data-spot>
+              <span class="chip">Work immersion · 80 hrs</span>
+              <h3>Work Immersion, ICT Network &amp; Maintenance</h3>
+              <p class="tl__org">Provincial Information Management Office, ICT Network &amp; Maintenance Division · Provincial Government</p>
+              <p>Completed 80 hours in ICT network maintenance, troubleshooting and IT support, ensuring efficient system operations and network connectivity.</p>
+              <ul class="tags" aria-label="Skills"><li>OSHA 10-Hour</li><li>Laptops</li></ul>
+            </div>
+          </li>
         </ol>
         <h3 class="h3 reveal">Learning &amp; development</h3>
         <div class="trainings">
@@ -320,7 +330,7 @@ $moments = [
       <h2 class="h2 reveal">Foundations of <em>excellence.</em></h2>
       <ul class="edu__list">
         <li class="reveal"><b class="yr">2024</b><div><span>2019 — 2024</span><h3>Bachelor of Science in Information Technology</h3><p>Agusan del Sur State College of Agriculture and Technology · Dean’s Lister</p></div></li>
-        <li class="reveal"><b class="yr">2019</b><div><span>2018 — 2019</span><h3>Senior High School</h3><p>Informatic Computer Institute of Agusan del Sur · With Honors</p></div></li>
+        <li class="reveal"><b class="yr">2019</b><div><span>2018 — 2019</span><h3>Senior High School · TVL-ICT, Computer System Servicing</h3><p>Informatic Computer Institute of Agusan del Sur · With Honors</p><p class="edu__note">Completed 486 hours as an administrative assistant managing paper works and data encoding, honing organizational skills and attention to detail.</p><ul class="tags" aria-label="Skills"><li>OSHA 10-Hour</li><li>Laptops</li></ul></div></li>
         <li class="reveal"><b class="yr">2013</b><div><span>2008 — 2013</span><h3>Elementary</h3><p>Consuelo Elementary School · With Honors</p></div></li>
       </ul>
     </div>
