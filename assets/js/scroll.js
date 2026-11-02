@@ -61,8 +61,7 @@
       var el = id === '#top' ? document.body : document.querySelector(id);
       if (!el) return;
       e.preventDefault();
-      nav.classList.remove('menu-open');
-      document.getElementById('burger').setAttribute('aria-expanded', 'false');
+      window.dispatchEvent(new Event('menuclose'));
       window.smoothTo(id === '#top' ? 0 : el.getBoundingClientRect().top + window.scrollY - 40);
     });
   });

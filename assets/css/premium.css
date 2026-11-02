@@ -245,3 +245,25 @@
   .exp__media,.edu__media,.skills-lay__media{margin-inline:auto}
   .cform__veil{top:calc(clamp(300px,52vw,440px) - 140px)}
 }
+
+/* Mobile menu: backdrop-filter/transform on .nav trap position:fixed children, so drop them while open */
+@media (max-width:1100px){
+  .nav.menu-open{backdrop-filter:none;-webkit-backdrop-filter:none;transform:none!important;background:var(--bg);border-color:var(--line)}
+  .nav__links{height:100vh;height:100dvh;padding:calc(var(--nav-h) + 12px) 24px 32px;overflow-y:auto;overscroll-behavior:contain;justify-content:flex-start}
+  .nav__links::before{content:"";margin:auto}
+  .nav__links::after{content:"";margin:auto}
+  .nav__links a{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease),color .3s}
+  .nav.menu-open .nav__links a{opacity:1;transform:none}
+  .nav.menu-open .nav__links a:nth-child(1){transition-delay:.08s}.nav.menu-open .nav__links a:nth-child(2){transition-delay:.14s}
+  .nav.menu-open .nav__links a:nth-child(3){transition-delay:.2s}.nav.menu-open .nav__links a:nth-child(4){transition-delay:.26s}
+  .nav.menu-open .nav__links a:nth-child(5){transition-delay:.32s}.nav.menu-open .nav__links a:nth-child(6){transition-delay:.38s}
+  .nav.menu-open .nav__links a:nth-child(7){transition-delay:.44s}
+  .nav__brand,.nav__actions{position:relative;z-index:2}
+}
+@media (max-height:520px) and (max-width:1100px){.nav__links a{font-size:1.5rem}.nav__links{gap:10px}}
+body.menu-lock{overflow:hidden}
+.nav__brand span{margin-left:.28em}
+@media (max-width:1100px){
+  .nav__links{gap:clamp(8px,2.6vh,26px)}
+  .nav__links a{font-size:clamp(1.5rem,5.2vh,2.2rem)}
+}
