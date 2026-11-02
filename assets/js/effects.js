@@ -152,7 +152,7 @@
 
   /* Lightbox */
   var lb = document.getElementById('lightbox'), lbi = document.getElementById('lightboxImg');
-  var items = $('.g-item'), idx = 0;
+  var items = $('.g-item, .c-item'), idx = 0;
   function show(i) {
     idx = (i + items.length) % items.length;
     lbi.src = 'assets/img/' + items[idx].dataset.full + '.jpg'; lbi.alt = items[idx].dataset.alt;
