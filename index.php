@@ -64,6 +64,7 @@ $moments = [
 <link rel="stylesheet" href="assets/css/layout.css">
 <link rel="stylesheet" href="assets/css/components.css">
 <link rel="stylesheet" href="assets/css/effects.css">
+<link rel="stylesheet" href="assets/css/premium.css">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -144,19 +145,22 @@ $moments = [
 <section class="section" id="about">
   <div class="container about">
     <div class="about__media reveal-img">
-      <div class="frame" data-parallax="-0.05"><?= img('portrait-4', 'Studio portrait of Maylyn Cabillanes') ?></div>
+      <div class="frame frame--tall" data-parallax="-0.04"><?= img('portrait-4', 'Studio portrait of Maylyn Cabillanes') ?></div>
+      <div class="frame frame--small" data-parallax="0.07"><?= img('moment-5', 'Maylyn smiling, relaxed portrait') ?></div>
+      <span class="about__outline" aria-hidden="true"></span>
       <div class="about__stat"><b data-count="2">0</b><span>Years in<br>public service</span></div>
     </div>
     <div class="about__text">
       <p class="eyebrow reveal">About</p>
-      <h2 class="h2 reveal">Technology-minded, people-centered.</h2>
-      <p class="reveal">I’m Maylyn, a Human Resource Management Staff member at the Philippine Postal Corporation in Davao City. My path began in Information Technology, where I graduated from Agusan del Sur State College of Agriculture and Technology as a Dean’s Lister, and it led me to a role where organized systems and genuine care for people work hand in hand.</p>
-      <p class="reveal">I bring a structured, detail-oriented approach to HR operations, from keeping records accurate and processes running smoothly to supporting colleagues through learning and development programs. I believe good HR is quietly excellent: reliable, respectful and always on time.</p>
+      <h2 class="h2 reveal">Technology-minded, <em>people-centered.</em></h2>
+      <p class="lead reveal">I’m Maylyn, a Human Resource Management Staff member at the Philippine Postal Corporation in Davao City.</p>
+      <p class="reveal">My path began in Information Technology, where I graduated from Agusan del Sur State College of Agriculture and Technology as a Dean’s Lister. It led me to a role where organized systems and genuine care for people work hand in hand.</p>
+      <blockquote class="quote reveal">Good HR is quietly excellent: reliable, respectful and always on time.</blockquote>
       <ul class="facts reveal">
         <li><span>Based in</span>Davao City, Philippines</li>
-        <li><span>Role</span>Human Resource Management Staff</li>
+        <li><span>Role</span>HR Management Staff</li>
         <li><span>Degree</span>BS Information Technology</li>
-        <li><span>Training</span>CSC, TESDA &amp; PHLPost programs</li>
+        <li><span>Training</span>CSC, TESDA &amp; PHLPost</li>
       </ul>
     </div>
   </div>
@@ -167,33 +171,41 @@ $moments = [
   <div class="container">
     <header class="section__head">
       <p class="eyebrow reveal">Experience</p>
-      <h2 class="h2 reveal">A career built on service.</h2>
+      <h2 class="h2 reveal">A career built on <em>service.</em></h2>
     </header>
-    <ol class="timeline">
-      <li class="tl reveal">
-        <span class="tl__date">Dec 2024 — Present</span>
-        <div class="tl__card card" data-spot>
-          <h3>Human Resource Management Staff</h3>
-          <p class="tl__org">Philippine Postal Corporation · Davao City</p>
-          <p>Supports day-to-day human resource operations of PHLPost, including personnel records, employee engagement and participation in agency learning and development programs, in service of a nationwide public institution.</p>
-          <a class="link" href="https://phlpost.gov.ph/cpt-press-releases/phlpost-davao-city-opens-first-ever-drive-thru-postal-service-in-the-country/" target="_blank" rel="noopener">PHLPost Davao’s first drive-thru postal service <span aria-hidden="true">↗</span></a>
+    <div class="exp">
+      <aside class="exp__media reveal-img">
+        <div class="frame frame--tall" data-parallax="0.04"><?= img('portrait-1', 'Maylyn Cabillanes, full-length studio portrait') ?></div>
+        <div class="exp__tag"><b>PHLPost</b><span>Davao City</span></div>
+      </aside>
+      <div class="exp__body">
+        <ol class="timeline">
+          <li class="tl reveal">
+            <span class="tl__date">Dec 2024 — Present</span>
+            <div class="tl__card card" data-spot>
+              <span class="chip">Current role</span>
+              <h3>Human Resource Management Staff</h3>
+              <p class="tl__org">Philippine Postal Corporation · Davao City</p>
+              <p>Supports day-to-day human resource operations of PHLPost, including personnel records, employee engagement and participation in agency learning and development programs, in service of a nationwide public institution.</p>
+              <a class="link" href="https://phlpost.gov.ph/cpt-press-releases/phlpost-davao-city-opens-first-ever-drive-thru-postal-service-in-the-country/" target="_blank" rel="noopener">PHLPost Davao’s first drive-thru postal service <span aria-hidden="true">↗</span></a>
+            </div>
+          </li>
+          <li class="tl reveal">
+            <span class="tl__date">2023</span>
+            <div class="tl__card card" data-spot>
+              <span class="chip">Internship</span>
+              <h3>Administrative Staff</h3>
+              <p class="tl__org">Agusan del Sur State College of Agriculture and Technology</p>
+              <p>Completed a government-service internship providing administrative support, document handling and office coordination as part of the BSIT program.</p>
+            </div>
+          </li>
+        </ol>
+        <h3 class="h3 reveal">Learning &amp; development</h3>
+        <div class="trainings">
+          <article class="train reveal" data-spot><span class="train__n">01</span><div><h4>Orientation on CSC Values-Driven Leadership</h4><p>Civil Service Commission / Philippine Postal Corporation</p></div><span class="chip">Managerial · 4 hrs</span></article>
+          <article class="train reveal" data-spot><span class="train__n">02</span><div><h4>Earthquake Preparedness Lecture and Drill</h4><p>Philippine Postal Corporation · 2025</p></div><span class="chip">Technical · 4 hrs</span></article>
+          <article class="train reveal" data-spot><span class="train__n">03</span><div><h4>Food Processing NC II</h4><p>Technical Education and Skills Development Authority (TESDA)</p></div><span class="chip">Technical · 16 hrs</span></article>
         </div>
-      </li>
-      <li class="tl reveal">
-        <span class="tl__date">2023</span>
-        <div class="tl__card card" data-spot>
-          <h3>Administrative Staff (Internship)</h3>
-          <p class="tl__org">Agusan del Sur State College of Agriculture and Technology</p>
-          <p>Completed a government-service internship providing administrative support, document handling and office coordination as part of the BSIT program.</p>
-        </div>
-      </li>
-    </ol>
-    <div class="trainings">
-      <h3 class="h3 reveal">Learning &amp; development</h3>
-      <div class="grid3">
-        <article class="card reveal" data-spot><span class="chip">Managerial · 4 hrs</span><h4>Orientation on CSC Values-Driven Leadership</h4><p>Civil Service Commission / Philippine Postal Corporation</p></article>
-        <article class="card reveal" data-spot><span class="chip">Technical · 4 hrs</span><h4>Earthquake Preparedness Lecture and Drill</h4><p>Philippine Postal Corporation · 2025</p></article>
-        <article class="card reveal" data-spot><span class="chip">Technical · 16 hrs</span><h4>Food Processing NC II</h4><p>TESDA — Technical Education and Skills Development Authority</p></article>
       </div>
     </div>
   </div>
@@ -202,33 +214,39 @@ $moments = [
 <!-- EDUCATION -->
 <section class="section" id="education">
   <div class="container edu">
+    <div class="edu__media reveal-img"><div class="frame frame--tall" data-parallax="0.05"><?= img('portrait-2', 'Full-length studio portrait of Maylyn Cabillanes') ?></div><span class="about__outline about__outline--r" aria-hidden="true"></span></div>
     <div class="edu__text">
       <p class="eyebrow reveal">Education</p>
-      <h2 class="h2 reveal">Foundations of excellence.</h2>
+      <h2 class="h2 reveal">Foundations of <em>excellence.</em></h2>
       <ul class="edu__list">
-        <li class="reveal"><span>2019 — 2024</span><h3>Bachelor of Science in Information Technology</h3><p>Agusan del Sur State College of Agriculture and Technology · Dean’s Lister</p></li>
-        <li class="reveal"><span>2018 — 2019</span><h3>Senior High School</h3><p>Informatic Computer Institute of Agusan del Sur · With Honors</p></li>
-        <li class="reveal"><span>2008 — 2013</span><h3>Elementary</h3><p>Consuelo Elementary School · With Honors</p></li>
+        <li class="reveal"><b class="yr">2024</b><div><span>2019 — 2024</span><h3>Bachelor of Science in Information Technology</h3><p>Agusan del Sur State College of Agriculture and Technology · Dean’s Lister</p></div></li>
+        <li class="reveal"><b class="yr">2019</b><div><span>2018 — 2019</span><h3>Senior High School</h3><p>Informatic Computer Institute of Agusan del Sur · With Honors</p></div></li>
+        <li class="reveal"><b class="yr">2013</b><div><span>2008 — 2013</span><h3>Elementary</h3><p>Consuelo Elementary School · With Honors</p></div></li>
       </ul>
     </div>
-    <div class="edu__media reveal-img"><div class="frame" data-parallax="0.05"><?= img('portrait-2', 'Full-length studio portrait of Maylyn Cabillanes') ?></div></div>
   </div>
 </section>
 
 <!-- SKILLS -->
 <section class="section section--alt" id="skills">
-  <div class="container">
-    <header class="section__head">
-      <p class="eyebrow reveal">Expertise</p>
-      <h2 class="h2 reveal">Human skills, technical edge.</h2>
-    </header>
-    <div class="grid3 skills">
-      <article class="card skill reveal" data-spot><span class="skill__n">01</span><h3>HR Operations</h3><p>Personnel records, documentation, onboarding support and compliance with Civil Service standards.</p></article>
-      <article class="card skill reveal" data-spot><span class="skill__n">02</span><h3>Administrative Excellence</h3><p>Organized filing, scheduling, correspondence and accurate reporting under deadlines.</p></article>
-      <article class="card skill reveal" data-spot><span class="skill__n">03</span><h3>Information Technology</h3><p>Digital fluency, office productivity tools and systems thinking from a BSIT foundation.</p></article>
-      <article class="card skill reveal" data-spot><span class="skill__n">04</span><h3>Communication</h3><p>Clear, courteous and professional engagement with colleagues, applicants and the public.</p></article>
-      <article class="card skill reveal" data-spot><span class="skill__n">05</span><h3>Learning &amp; Development</h3><p>Active participant in leadership values, safety and technical skills programs.</p></article>
-      <article class="card skill reveal" data-spot><span class="skill__n">06</span><h3>Integrity &amp; Service</h3><p>Grounded in public-service values: honesty, accountability and respect for people.</p></article>
+  <div class="container skills-lay">
+    <div class="skills-lay__media reveal-img">
+      <div class="frame frame--tall" data-parallax="-0.04"><?= img('moment-6', 'Maylyn at an elegant venue beneath chandeliers') ?></div>
+      <span class="about__outline" aria-hidden="true"></span>
+    </div>
+    <div>
+      <header class="section__head">
+        <p class="eyebrow reveal">Expertise</p>
+        <h2 class="h2 reveal">Human skills, <em>technical edge.</em></h2>
+      </header>
+      <div class="skills">
+        <article class="skill reveal" data-spot><span class="skill__n">01</span><div><h3>HR Operations</h3><p>Personnel records, documentation, onboarding support and Civil Service compliance.</p></div></article>
+        <article class="skill reveal" data-spot><span class="skill__n">02</span><div><h3>Administrative Excellence</h3><p>Organized filing, scheduling, correspondence and accurate reporting.</p></div></article>
+        <article class="skill reveal" data-spot><span class="skill__n">03</span><div><h3>Information Technology</h3><p>Digital fluency, productivity tools and systems thinking from a BSIT foundation.</p></div></article>
+        <article class="skill reveal" data-spot><span class="skill__n">04</span><div><h3>Communication</h3><p>Clear, courteous and professional engagement with colleagues and the public.</p></div></article>
+        <article class="skill reveal" data-spot><span class="skill__n">05</span><div><h3>Learning &amp; Development</h3><p>Active participant in leadership values, safety and technical skills programs.</p></div></article>
+        <article class="skill reveal" data-spot><span class="skill__n">06</span><div><h3>Integrity &amp; Service</h3><p>Grounded in public-service values: honesty, accountability and respect.</p></div></article>
+      </div>
     </div>
   </div>
 </section>
@@ -268,28 +286,47 @@ $moments = [
 
 <!-- CONTACT -->
 <section class="section section--alt" id="contact">
-  <div class="container contact">
-    <div class="contact__intro">
-      <p class="eyebrow reveal">Contact</p>
-      <h2 class="h2 reveal">Let’s start a conversation.</h2>
-      <p class="reveal">For inquiries, collaborations or professional connections, send a message and I’ll respond promptly.</p>
-      <ul class="contact__list reveal">
-        <li><span>Email</span><a class="link" href="mailto:info@maylyncabillanes.com">info@maylyncabillanes.com</a></li>
-        <li><span>Email</span><a class="link" href="mailto:maylyncabillanes3@gmail.com">maylyncabillanes3@gmail.com</a></li>
-        <li><span>Location</span>Davao City, Philippines</li>
-        <li><span>Social</span><a class="link" href="https://www.facebook.com/maylyn.cabillanes" target="_blank" rel="noopener">Facebook ↗</a></li>
-      </ul>
+  <div class="container">
+    <header class="section__head section__head--center">
+      <p class="eyebrow eyebrow--center reveal">Contact</p>
+      <h2 class="h2 reveal">Let’s start a <em>conversation.</em></h2>
+      <p class="reveal together__lead">For inquiries, collaborations or professional connections, send a message and I’ll respond promptly.</p>
+    </header>
+    <div class="cform reveal">
+      <aside class="cform__side">
+        <?= img('moment-3', 'Maylyn smiling, close portrait', 'cform__img') ?>
+        <div class="cform__veil"></div>
+        <div class="cform__info">
+          <h3>Maylyn Cabillanes</h3>
+          <p>Human Resource Management Staff<br>Philippine Postal Corporation</p>
+          <ul>
+            <li><span>Email</span><a class="link" href="mailto:info@maylyncabillanes.com">info@maylyncabillanes.com</a></li>
+            <li><span>Email</span><a class="link" href="mailto:maylyncabillanes3@gmail.com">maylyncabillanes3@gmail.com</a></li>
+            <li><span>Location</span>Davao City, Philippines</li>
+          </ul>
+          <a class="social" href="https://www.facebook.com/maylyn.cabillanes" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.7c0-.9.3-1.5 1.5-1.5h1.6V4.5c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.2H7.9v3h2.6V21h3z"/></svg>Connect on Facebook</a>
+        </div>
+      </aside>
+      <form class="form" id="contactForm" method="post" action="api/contact.php" novalidate>
+        <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf']) ?>">
+        <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <h3 class="form__title">Send a message</h3>
+        <fieldset class="topics">
+          <legend>I’m reaching out about</legend>
+          <label class="topic"><input type="radio" name="subject" value="Professional inquiry" checked><span>Professional inquiry</span></label>
+          <label class="topic"><input type="radio" name="subject" value="Collaboration"><span>Collaboration</span></label>
+          <label class="topic"><input type="radio" name="subject" value="General question"><span>General question</span></label>
+        </fieldset>
+        <div class="form__row">
+          <div class="field"><input id="f-name" name="name" type="text" placeholder=" " required maxlength="100" autocomplete="name"><label for="f-name">Your name</label><small class="err" data-for="name"></small></div>
+          <div class="field"><input id="f-email" name="email" type="email" placeholder=" " required maxlength="160" autocomplete="email"><label for="f-email">Email address</label><small class="err" data-for="email"></small></div>
+        </div>
+        <div class="field"><textarea id="f-message" name="message" rows="5" placeholder=" " required maxlength="5000"></textarea><label for="f-message">Your message</label><small class="err" data-for="message"></small></div>
+        <button class="btn btn--gold btn--block" type="submit" data-magnetic><span class="btn__label">Send message</span><span class="btn__spin" aria-hidden="true"></span></button>
+        <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
+        <p class="form__note">Your details are only used to reply to your message.</p>
+      </form>
     </div>
-    <form class="form reveal" id="contactForm" method="post" action="api/contact.php" novalidate>
-      <input type="hidden" name="csrf" value="<?= htmlspecialchars($_SESSION['csrf']) ?>">
-      <div class="hp" aria-hidden="true"><label>Website<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
-      <div class="field"><input id="f-name" name="name" type="text" placeholder=" " required maxlength="100" autocomplete="name"><label for="f-name">Your name</label><small class="err" data-for="name"></small></div>
-      <div class="field"><input id="f-email" name="email" type="email" placeholder=" " required maxlength="160" autocomplete="email"><label for="f-email">Email address</label><small class="err" data-for="email"></small></div>
-      <div class="field"><input id="f-subject" name="subject" type="text" placeholder=" " maxlength="150"><label for="f-subject">Subject</label><small class="err" data-for="subject"></small></div>
-      <div class="field"><textarea id="f-message" name="message" rows="5" placeholder=" " required maxlength="5000"></textarea><label for="f-message">Message</label><small class="err" data-for="message"></small></div>
-      <button class="btn btn--gold btn--block" type="submit" data-magnetic><span class="btn__label">Send message</span><span class="btn__spin" aria-hidden="true"></span></button>
-      <p class="form__status" id="formStatus" role="status" aria-live="polite"></p>
-    </form>
   </div>
 </section>
 </main>
