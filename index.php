@@ -34,8 +34,22 @@ $moments = [
 <meta name="theme-color" content="#0d0b0e">
 <meta property="og:title" content="Maylyn Cabillanes | Human Resource Management Staff">
 <meta property="og:description" content="Where people, process and technology meet.">
-<meta property="og:image" content="assets/img/portrait-3.jpg">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230d0b0e'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='%23c9a45c' font-family='Georgia,serif'%3EM%3C/text%3E%3C/svg%3E">
+<meta property="og:image" content="https://maylyncabillanes.com/assets/img/portrait-3.jpg">
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="canonical" href="https://maylyncabillanes.com/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="author" content="Maylyn Cabillanes">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Maylyn Cabillanes">
+<meta property="og:url" content="https://maylyncabillanes.com/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://maylyncabillanes.com/assets/img/portrait-3.jpg">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Maylyn Cabillanes","url":"https://maylyncabillanes.com/","image":"https://maylyncabillanes.com/assets/img/portrait-3.jpg","jobTitle":"Human Resource Management Staff","worksFor":{"@type":"Organization","name":"Philippine Postal Corporation","url":"https://phlpost.gov.ph/"},"alumniOf":{"@type":"CollegeOrUniversity","name":"Agusan del Sur State College of Agriculture and Technology"},"address":{"@type":"PostalAddress","addressLocality":"Davao City","addressCountry":"PH"},"email":"mailto:info@maylyncabillanes.com","sameAs":["https://www.facebook.com/maylyn.cabillanes"]}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -70,9 +84,13 @@ $moments = [
     <a href="#education">Education</a>
     <a href="#skills">Expertise</a>
     <a href="#gallery">Gallery</a>
+    <a href="#together">Together</a>
     <a href="#contact">Contact</a>
   </nav>
   <div class="nav__actions">
+    <a class="icon-btn" href="https://www.facebook.com/maylyn.cabillanes" target="_blank" rel="noopener" aria-label="Maylyn Cabillanes on Facebook">
+      <svg viewBox="0 0 24 24" width="19" height="19" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.7c0-.9.3-1.5 1.5-1.5h1.6V4.5c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.2H7.9v3h2.6V21h3z"/></svg>
+    </a>
     <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle light and dark mode" aria-pressed="<?= $theme === 'light' ? 'true' : 'false' ?>">
       <svg class="i-sun" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.3M12 19.2v2.3M2.5 12h2.3M19.2 12h2.3M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/></svg>
       <svg class="i-moon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
@@ -229,6 +247,22 @@ $moments = [
     <button type="button" class="g-item" data-full="<?= $n ?>" data-alt="<?= htmlspecialchars($alt, ENT_QUOTES) ?>"><?= img($n, $alt) ?></button>
     <?php endforeach; ?>
     <button type="button" class="g-item" data-full="portrait-4" data-alt="Studio portrait of Maylyn Cabillanes"><?= img('portrait-4', 'Studio portrait of Maylyn Cabillanes') ?></button>
+  </div>
+</section>
+
+<!-- TOGETHER -->
+<section class="section together" id="together">
+  <div class="container">
+    <header class="section__head">
+      <p class="eyebrow reveal">Together</p>
+      <h2 class="h2 reveal">Maylyn &amp; Arnel.</h2>
+      <p class="reveal together__lead">A studio photoshoot celebrating partnership, support and the people who make the work worthwhile.</p>
+    </header>
+    <div class="together__grid">
+      <?php foreach ([1, 2, 3, 4] as $n): ?>
+      <button type="button" class="c-item reveal-img" data-full="couple-<?= $n ?>" data-alt="Maylyn and Arnel, studio couple portrait <?= $n ?>" style="--d:<?= ($n - 1) * .12 ?>s"><?= img('couple-' . $n, 'Maylyn and Arnel, studio couple portrait ' . $n) ?><span class="c-item__zoom" aria-hidden="true">+</span></button>
+      <?php endforeach; ?>
+    </div>
   </div>
 </section>
 
