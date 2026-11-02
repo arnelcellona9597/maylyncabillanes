@@ -381,6 +381,13 @@ $moments = [
       <button type="button" class="c-item reveal-img" data-full="couple-<?= $n ?>" data-alt="Maylyn and Arnel, studio couple portrait <?= $n ?>" style="--d:<?= ($n - 1) * .12 ?>s"><?= img('couple-' . $n, 'Maylyn and Arnel, studio couple portrait ' . $n) ?><span class="c-item__zoom" aria-hidden="true">+</span></button>
       <?php endforeach; ?>
     </div>
+    <div class="together__link reveal">
+      <span>Visit Arnel’s website</span>
+      <a class="partner" href="https://www.arnelcellona.com" target="_blank" rel="noopener" title="Arnel Cellona — arnelcellona.com">
+        <b>Arnel Cellona</b><i>www.arnelcellona.com</i>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
