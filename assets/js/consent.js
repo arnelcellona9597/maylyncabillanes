@@ -70,18 +70,27 @@
     if (!dialog) return;
     if (typeof dialog.showModal === 'function') { if (!dialog.open) dialog.showModal(); }
     else dialog.setAttribute('open', '');
-    document.body.classList.add('menu-lock');
+    document.body.classList.add('menu-lock', 'native-cursor');
   }
   function closePrivacy() {
     if (!dialog) return;
     if (typeof dialog.close === 'function') dialog.close(); else dialog.removeAttribute('open');
-    document.body.classList.remove('menu-lock');
+    document.body.classList.remove('menu-lock', 'native-cursor');
   }
   [].forEach.call(document.querySelectorAll('[data-open-privacy]'), function (b) { b.addEventListener('click', openPrivacy); });
   if (dialog) {
     if (closeBtn) closeBtn.addEventListener('click', closePrivacy);
-    dialog.addEventListener('close', function () { document.body.classList.remove('menu-lock'); });
+    dialog.addEventListener('close', function () { document.body.classList.remove('menu-lock', 'native-cursor'); });
     dialog.addEventListener('click', function (e) { if (e.target === dialog) closePrivacy(); });
+    /* Keep Tab / Shift+Tab cycling inside the dialog instead of leaving the page. */
+    dialog.addEventListener('keydown', function (e) {
+      if (e.key !== 'Tab') return;
+      var f = [].slice.call(dialog.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])'));
+      if (!f.length) return;
+      var first = f[0], last = f[f.length - 1], a = document.activeElement;
+      if (e.shiftKey && (a === first || !dialog.contains(a))) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && (a === last || !dialog.contains(a))) { e.preventDefault(); first.focus(); }
+    });
   }
 
   /* First visit: show the banner shortly after the page has finished loading. */

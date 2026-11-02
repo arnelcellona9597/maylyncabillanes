@@ -62,6 +62,11 @@
       if (!el) return;
       e.preventDefault();
       window.dispatchEvent(new Event('menuclose'));
+      /* Keyboard/screen-reader users: move focus to the section that was jumped to. */
+      if (id !== '#top') {
+        if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '-1');
+        try { el.focus({ preventScroll: true }); } catch (err) {}
+      }
       window.smoothTo(id === '#top' ? 0 : el.getBoundingClientRect().top + window.scrollY - 40);
     });
   });

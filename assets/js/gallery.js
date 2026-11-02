@@ -125,6 +125,21 @@
   }, true);
   view.addEventListener('dragstart', function (e) { e.preventDefault(); });
 
+
+  /* Keyboard: focusing an off-screen photo must bring its slide into view (and never scroll the clipped viewport itself). */
+  view.addEventListener('scroll', function () { view.scrollLeft = 0; });
+  items.forEach(function (it) {
+    it.addEventListener('focus', function () {
+      view.scrollLeft = 0;
+      var pad = parseFloat(getComputedStyle(rail).paddingLeft) || 0, vw = view.clientWidth;
+      var left = it.offsetLeft - pad, right = it.offsetLeft + it.offsetWidth + pad;
+      for (var i = 0; i < positions.length; i++) {
+        if (left >= positions[i] - 4 && right <= positions[i] + vw + 4) { if (i !== index) go(i); break; }
+      }
+      restart();
+    });
+  });
+
   new IntersectionObserver(function (en) { inView = en[0].isIntersecting; tick(); }, { threshold: 0.25 }).observe(root);
   var rt; window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(measure, 150); });
   window.addEventListener('load', measure);
