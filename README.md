@@ -10,6 +10,7 @@ Live: https://maylyncabillanes.com
 - Light/dark mode toggle. The choice is stored in a cookie and `localStorage`, so it survives refreshes and PHP renders the right theme on first paint.
 - Responsive from 320px to desktop (burger menu below 1100px).
 - Contact form (`api/contact.php`): CSRF token, honeypot, per-session rate limit, validation, and delivery through IONOS SMTP (STARTTLS on port 587) to both inboxes.
+- Analytics and consent: Google Analytics 4 (`G-ZTC7HK73VF`) loads only on the live domain, behind a cookie consent banner using Google Consent Mode v2. Analytics stays denied until the visitor accepts; the choice is stored for 12 months and can be changed from "Cookie settings" in the footer. A privacy notice dialog explains what is collected.
 - SEO and sharing: JSON-LD schema graph (WebSite, ProfilePage, Person, ImageObject), Open Graph and Twitter Card tags, 1200x630 share image, canonical URL, `robots.txt`, `sitemap.xml`, web manifest, face-crop favicons.
 
 ## Project structure
@@ -19,7 +20,7 @@ api/contact.php         contact form endpoint (JSON)
 src/Env.php             .env loader
 src/Mailer.php          minimal SMTP client
 assets/css/             base, layout, components, effects, premium
-assets/js/              theme, scroll, effects, contact, main
+assets/js/              theme, scroll, effects, hearts, gallery, contact, consent, main
 assets/img/             optimized WebP + JPG images, favicons, og-image.jpg
 robots.txt, sitemap.xml, site.webmanifest, favicon.ico
 router.php              local dev router only (not deployed)
