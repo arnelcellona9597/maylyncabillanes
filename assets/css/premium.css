@@ -49,10 +49,10 @@
 /* Education */
 .edu{grid-template-columns:.8fr 1.2fr}
 .edu__media{max-width:440px}
-.edu__list li{display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:center;padding:28px 0}
+.edu__list>li{display:grid;grid-template-columns:110px 1fr;gap:20px;align-items:center;padding:28px 0}
 .yr{font:400 3.4rem/1 var(--font-display);color:transparent;-webkit-text-stroke:1px var(--gold);transition:color .5s var(--ease)}
-.edu__list li:hover{padding-left:0}
-.edu__list li:hover .yr{color:var(--gold)}
+.edu__list>li:hover{padding-left:0}
+.edu__list>li:hover .yr{color:var(--gold)}
 .edu__list h3{margin-top:6px}
 
 /* Expertise */
@@ -116,7 +116,7 @@
 @media (max-width:640px){
   .form__row,.skills{grid-template-columns:1fr}
   .train{grid-template-columns:auto 1fr}.train .chip{grid-column:1/-1;justify-self:start}
-  .edu__list li{grid-template-columns:80px 1fr}.yr{font-size:2.4rem}
+  .edu__list>li{grid-template-columns:80px 1fr}.yr{font-size:2.4rem}
   .about__stat{left:6px}
 }
 
@@ -267,3 +267,15 @@ body.menu-lock{overflow:hidden}
   .nav__links{gap:clamp(8px,2.6vh,26px)}
   .nav__links a{font-size:clamp(1.5rem,5.2vh,2.2rem)}
 }
+
+/* Smooth tag hover: no edge-flicker (scale from centre), fill slides in, text colour eases */
+.tags li{position:relative;overflow:hidden;isolation:isolate;cursor:default;font-weight:400;
+  transition:color .5s var(--ease),border-color .5s var(--ease),box-shadow .7s var(--ease),transform .7s var(--ease);
+  will-change:transform;backface-visibility:hidden}
+.tags li::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--accent);border-radius:inherit;
+  transform:scaleY(0);transform-origin:50% 100%;transition:transform .6s var(--ease)}
+.tags li:hover{transform:scale(1.045);color:var(--accent-ink);border-color:var(--accent);
+  box-shadow:0 10px 26px -12px color-mix(in srgb,var(--gold) 80%,transparent)}
+.tags li:hover::before{transform:scaleY(1)}
+@media (hover:none){.tags li:hover{transform:none}}
+@media (prefers-reduced-motion:reduce){.tags li,.tags li::before{transition:none}}
