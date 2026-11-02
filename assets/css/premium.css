@@ -169,3 +169,23 @@
 .partner:hover i,.partner:hover svg{color:var(--accent-ink)}
 .partner:hover svg{transform:translate(4px,-4px)}
 @media (max-width:520px){.partner{flex-direction:column;gap:4px;padding:16px 26px;border-radius:24px}.partner svg{position:absolute;top:12px;right:14px}}
+
+/* Tags + education note */
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.tags li{white-space:nowrap;padding:6px 14px;border:1px solid var(--line);border-radius:999px;font-size:.78rem;letter-spacing:.06em;color:var(--text);background:var(--surface-2);transition:border-color .3s,transform .4s var(--ease)}
+.tags li:hover{border-color:var(--gold);transform:translateY(-2px)}
+.edu__note{margin-top:10px!important;font-size:.88rem}
+
+/* Honors & awards */
+.awards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.award{position:relative;display:flex;gap:18px;align-items:flex-start;padding:24px 26px;border:1px solid var(--line);border-radius:18px;background:var(--surface);overflow:hidden;transition:transform .6s var(--ease),border-color .4s,box-shadow .6s var(--ease)}
+.award::before{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--gold) 16%,transparent),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
+.award:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:var(--shadow)}
+.award:hover::before{opacity:1}
+.award:first-child{grid-column:1/-1}
+.award__icon{flex:none;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;color:var(--accent);border:1px solid var(--line);transition:background .4s,color .4s}
+.award:hover .award__icon{background:var(--accent);color:var(--accent-ink)}
+.award h4{font-size:1.4rem;margin:12px 0 4px}
+.award__org{margin:0 0 10px!important;color:var(--accent)!important;font-size:.8rem;letter-spacing:.06em}
+.award p{margin:0;color:var(--muted);font-size:.92rem}
+@media (max-width:640px){.awards{grid-template-columns:1fr}.award{padding:20px}}
