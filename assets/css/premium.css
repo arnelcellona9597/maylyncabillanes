@@ -333,3 +333,25 @@ body.menu-lock{overflow:hidden}
   .slider__play{width:42px;padding:0;justify-content:center}.slider__play-label{display:none}
 }
 @media (prefers-reduced-motion:reduce){.gallery__rail{transition:none}.slider.is-playing .slider__dot.is-active::after{animation:none;transform:scaleX(1)}}
+
+/* School links (Education) */
+.school-links{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.school-link{position:relative;display:inline-flex;align-items:center;gap:12px;padding:11px 18px 11px 16px;border:1px solid var(--line);border-radius:14px;background:var(--surface);color:var(--text);overflow:hidden;isolation:isolate;
+  transition:transform .6s var(--ease),border-color .4s,box-shadow .6s var(--ease),color .4s}
+.school-link::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--accent);transform:translateX(-101%);transition:transform .6s var(--ease)}
+.school-link>svg:first-child{flex:none;color:var(--accent);transition:color .4s}
+.school-link span{display:flex;flex-direction:column;line-height:1.25}
+.school-link b{font:500 .9rem var(--font-body);letter-spacing:.02em}
+.school-link i{font-style:normal;font-size:.76rem;letter-spacing:.06em;color:var(--muted);transition:color .4s}
+.school-link__go{flex:none;color:var(--muted);margin-left:4px;transition:transform .5s var(--ease),color .4s}
+.school-link:hover{transform:translateY(-3px);border-color:var(--accent);color:var(--accent-ink);box-shadow:0 16px 34px -16px var(--gold)}
+.school-link:hover::before{transform:translateX(0)}
+.school-link:hover>svg:first-child,.school-link:hover i,.school-link:hover .school-link__go{color:var(--accent-ink)}
+.school-link:hover .school-link__go{transform:translate(3px,-3px)}
+.school-link:active{transform:scale(.97)}
+@media (max-width:520px){.school-links{flex-direction:column}.school-link{width:100%}.school-link__go{margin-left:auto}}
+@media (prefers-reduced-motion:reduce){.school-link,.school-link::before{transition:none}}
+.edu__list .school-link span{display:flex;flex-direction:column;text-transform:none;letter-spacing:0;font-size:inherit;color:inherit}
+.edu__list .school-link b{color:var(--text);text-transform:none;letter-spacing:.01em;transition:color .4s}
+.edu__list .school-link:hover b{color:var(--accent-ink)}
+.edu__list .school-link:hover i{color:var(--accent-ink)}
