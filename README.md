@@ -59,6 +59,7 @@ Never commit credentials. Rotate the SMTP and SFTP passwords if they have been s
 - Submit `https://maylyncabillanes.com/sitemap.xml` in Google Search Console.
 - Validate structured data: https://search.google.com/test/rich-results and https://validator.schema.org
 - Refresh share previews after changes: Facebook Sharing Debugger (https://developers.facebook.com/tools/debug/), LinkedIn Post Inspector.
+- Favicon: `favicon.ico` (16/32/48) plus PNGs at 32, 48, 96 and 192 px, all cropped from `portrait-3`. Google needs a square icon in multiples of 48 px and can take days to weeks to refresh it in search results; use URL Inspection → Request indexing in Search Console to speed that up.
 - The share image is `assets/img/og-image.jpg`. When it changes, bump the `?v=` value in `index.php` (`$ogImage`) so platforms re-fetch it.
 
 ## Content notes

@@ -167,10 +167,12 @@ $moments = [
 <link rel="canonical" href="<?= $site ?>/">
 <link rel="alternate" hreflang="en" href="<?= $site ?>/">
 <link rel="manifest" href="/site.webmanifest">
-<link rel="icon" href="/favicon.ico" sizes="48x48">
-<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png">
-<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="icon" href="/<?= asset('favicon.ico') ?>" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/<?= asset('assets/img/favicon-32.png') ?>">
+<link rel="icon" type="image/png" sizes="48x48" href="/<?= asset('assets/img/favicon-48.png') ?>">
+<link rel="icon" type="image/png" sizes="96x96" href="/<?= asset('assets/img/favicon-96.png') ?>">
+<link rel="icon" type="image/png" sizes="192x192" href="/<?= asset('assets/img/favicon-192.png') ?>">
+<link rel="apple-touch-icon" sizes="180x180" href="/<?= asset('assets/img/apple-touch-icon.png') ?>">
 
 <!-- Open Graph (Facebook, LinkedIn, WhatsApp, Messenger, Telegram, Viber) -->
 <meta property="og:type" content="profile">
