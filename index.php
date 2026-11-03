@@ -107,6 +107,13 @@ $schema = [
     ],
 ];
 
+/** Asset URL with a version taken from the file's modification time, so browsers/CDNs fetch new files after each deploy. */
+function asset(string $path): string
+{
+    $file = __DIR__ . '/' . $path;
+    return $path . (is_file($file) ? '?v=' . filemtime($file) : '');
+}
+
 function img(string $name, string $alt, string $class = '', string $loading = 'lazy'): string
 {
     $a = htmlspecialchars($alt, ENT_QUOTES);
@@ -199,11 +206,11 @@ $moments = [
     if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
   } catch (e) {}
 </script>
-<link rel="stylesheet" href="assets/css/base.css">
-<link rel="stylesheet" href="assets/css/layout.css">
-<link rel="stylesheet" href="assets/css/components.css">
-<link rel="stylesheet" href="assets/css/effects.css">
-<link rel="stylesheet" href="assets/css/premium.css">
+<link rel="stylesheet" href="<?= asset('assets/css/base.css') ?>">
+<link rel="stylesheet" href="<?= asset('assets/css/layout.css') ?>">
+<link rel="stylesheet" href="<?= asset('assets/css/components.css') ?>">
+<link rel="stylesheet" href="<?= asset('assets/css/effects.css') ?>">
+<link rel="stylesheet" href="<?= asset('assets/css/premium.css') ?>">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -638,13 +645,13 @@ $moments = [
   <button type="button" class="lightbox__nav lightbox__next" aria-label="Next image">›</button>
 </div>
 
-<script src="assets/js/theme.js"></script>
-<script src="assets/js/scroll.js"></script>
-<script src="assets/js/effects.js"></script>
-<script src="assets/js/hearts.js"></script>
-<script src="assets/js/gallery.js"></script>
-<script src="assets/js/contact.js"></script>
-<script src="assets/js/consent.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="<?= asset('assets/js/theme.js') ?>"></script>
+<script src="<?= asset('assets/js/scroll.js') ?>"></script>
+<script src="<?= asset('assets/js/effects.js') ?>"></script>
+<script src="<?= asset('assets/js/hearts.js') ?>"></script>
+<script src="<?= asset('assets/js/gallery.js') ?>"></script>
+<script src="<?= asset('assets/js/contact.js') ?>"></script>
+<script src="<?= asset('assets/js/consent.js') ?>"></script>
+<script src="<?= asset('assets/js/main.js') ?>"></script>
 </body>
 </html>
