@@ -35,18 +35,8 @@ $schema = [
             'isPartOf' => ['@id' => "$site/#website"],
             'about' => ['@id' => "$site/#person"],
             'mainEntity' => ['@id' => "$site/#person"],
-            'primaryImageOfPage' => ['@id' => "$site/#primaryimage"],
             'inLanguage' => 'en-PH',
             'dateModified' => $modified,
-        ],
-        [
-            '@type' => 'ImageObject',
-            '@id' => "$site/#primaryimage",
-            'url' => "$site/assets/img/og-image.jpg",
-            'contentUrl' => "$site/assets/img/og-image.jpg",
-            'width' => 1200,
-            'height' => 630,
-            'caption' => 'Maylyn Cabillanes, Human Resource Management Staff',
         ],
         [
             '@type' => 'Person',
@@ -55,12 +45,6 @@ $schema = [
             'givenName' => 'Maylyn',
             'familyName' => 'Cabillanes',
             'url' => "$site/",
-            'image' => [
-                '@type' => 'ImageObject',
-                'url' => "$site/assets/img/portrait-3.jpg",
-                'width' => 1024,
-                'height' => 1024,
-            ],
             'jobTitle' => 'Human Resource Management Staff',
             'description' => "Human Resource Management Staff at the Philippine Postal Corporation and BS Information Technology graduate (Dean's Lister).",
             'email' => 'mailto:info@maylyncabillanes.com',
@@ -167,7 +151,7 @@ $moments = [
 <meta name="description" content="Maylyn Cabillanes is a Human Resource Management Staff member at the Philippine Postal Corporation in Davao City, and a BS Information Technology graduate and Dean's Lister.">
 <meta name="keywords" content="Maylyn Cabillanes, Human Resource Management Staff, HR, Philippine Postal Corporation, PHLPost, Davao City, BS Information Technology">
 <meta name="author" content="Maylyn Cabillanes">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="robots" content="index, follow, noimageindex, max-image-preview:none, max-snippet:-1">
 <meta name="theme-color" content="#0d0b0e">
 <link rel="canonical" href="<?= $site ?>/">
 <link rel="alternate" hreflang="en" href="<?= $site ?>/">

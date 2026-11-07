@@ -8,6 +8,10 @@ RedirectMatch 404 ^/(src|\.git)(/|$)
   Header set X-Frame-Options "SAMEORIGIN"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
   Header set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  # Keep photos out of image search (favicons, apple-touch-icon and the share image are excluded)
+  <FilesMatch "^(portrait|moment|couple)-[^/]*\.(jpe?g|png|webp)$">
+    Header set X-Robots-Tag "noindex, noimageindex"
+  </FilesMatch>
 </IfModule>
 <IfModule mod_expires.c>
   ExpiresActive On
