@@ -1,3 +1,10 @@
+# Photos are not offered to image search. Favicons stay crawlable so the site icon still works.
+User-agent: Googlebot-Image
+Disallow: /assets/img/
+Allow: /assets/img/favicon-
+Allow: /assets/img/apple-touch-icon.png
+Allow: /favicon.ico
+
 User-agent: *
 Allow: /
 Disallow: /api/

@@ -39,6 +39,9 @@ All secrets live in `.env`, which is git-ignored. See `.env.example` for the key
 `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `MAIL_FROM`, `MAIL_FROM_NAME`, `MAIL_TO` (comma-separated recipients).
 On the live server the `.env` sits one level above the web root (`/.env`, with the site in `/public`). `api/contact.php` reads it from there first.
 
+## Photos and image search
+Photos are kept out of image search: `noimageindex` + `max-image-preview:none` in the robots meta tag, `Googlebot-Image` disallowed for `/assets/img/` (favicons excepted) in `robots.txt`, an `X-Robots-Tag: noindex` header on the portrait/moment/couple files in `.htaccess`, and no image entries in `sitemap.xml` or the structured data. The share image (`og-image.jpg`) is still served for link previews on social networks. Images already indexed disappear only after Google recrawls; speed it up with Search Console → Removals.
+
 ## Maintenance mode
 Create an empty file named `maintenance.flag` to switch the site to a branded 503 "Be right back" page (with `Retry-After`, `noindex`, and a JSON 503 for the contact form). Delete the file to bring the site back. No redeploy is needed.
 - Live server: `/maintenance.flag` (above the web root, next to `.env`).

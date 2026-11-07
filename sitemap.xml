@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://maylyncabillanes.com/</loc>
-    <lastmod>2026-11-02</lastmod>
+    <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <image:image><image:loc>https://maylyncabillanes.com/assets/img/og-image.jpg</image:loc><image:title>Maylyn Cabillanes, Human Resource Management Staff</image:title></image:image>
-    <image:image><image:loc>https://maylyncabillanes.com/assets/img/portrait-3.jpg</image:loc><image:title>Maylyn Cabillanes portrait</image:title></image:image>
-    <image:image><image:loc>https://maylyncabillanes.com/assets/img/portrait-1.jpg</image:loc><image:title>Maylyn Cabillanes studio portrait</image:title></image:image>
   </url>
 </urlset>
