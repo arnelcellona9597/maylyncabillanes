@@ -1,6 +1,11 @@
 <?php
 declare(strict_types=1);
 
+require __DIR__ . '/src/Maintenance.php';
+if (Maintenance::active()) {
+    Maintenance::renderPage();
+}
+
 session_start(['cookie_httponly' => true, 'cookie_samesite' => 'Lax']);
 if (empty($_SESSION['csrf'])) {
     $_SESSION['csrf'] = bin2hex(random_bytes(32));
