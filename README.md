@@ -39,6 +39,12 @@ All secrets live in `.env`, which is git-ignored. See `.env.example` for the key
 `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS`, `MAIL_FROM`, `MAIL_FROM_NAME`, `MAIL_TO` (comma-separated recipients).
 On the live server the `.env` sits one level above the web root (`/.env`, with the site in `/public`). `api/contact.php` reads it from there first.
 
+## Maintenance mode
+Create an empty file named `maintenance.flag` to switch the site to a branded 503 "Be right back" page (with `Retry-After`, `noindex`, and a JSON 503 for the contact form). Delete the file to bring the site back. No redeploy is needed.
+- Live server: `/maintenance.flag` (above the web root, next to `.env`).
+- Local: `maintenance.flag` in the project root (git-ignored).
+Keep maintenance short; a 503 tells search engines it is temporary, but long outages can hurt rankings.
+
 ## Branching
 - `main`: production. Only receives merges from `develop`.
 - `develop`: integration.

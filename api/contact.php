@@ -1,6 +1,11 @@
 <?php
 declare(strict_types=1);
 
+require __DIR__ . '/../src/Maintenance.php';
+if (Maintenance::active()) {
+    Maintenance::renderJson();
+}
+
 require __DIR__ . '/../src/Env.php';
 require __DIR__ . '/../src/Mailer.php';
 
